@@ -56,7 +56,7 @@
         };
 
         font = {
-          size = 11;
+          size = 13;
           normal.family = "FiraCode Nerd Font";
         };
       };
