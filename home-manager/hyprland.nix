@@ -43,7 +43,10 @@ in
   };
 
   # Import .nix which are made for hyprland config
-  imports = [ ./wofi.nix ];
+  imports = [
+    ./wofi.nix # Notification handler
+    ./waybar.nix # Status bar
+  ];
 
   # You need me!
   xdg.enable = true;
@@ -102,6 +105,9 @@ in
       exec-once = [
         # Set my lovely wallpaper
         "swww init && swww img ~/.config/hypr/wallpaper/wallhaven-2e2xyx.jpg"
+
+        # Status bar
+        "waybar &"
       ];
 
       general = {
