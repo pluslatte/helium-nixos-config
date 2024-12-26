@@ -17,6 +17,8 @@
       enable = true;
     };
     alacritty.enable = true;
+    firefox.enable = true;
+    vim.enable = true;
   };
 
   # hyprland
@@ -34,7 +36,7 @@
       monitor = [ ",preferred,auto,1" ];
       bind = [
         "$mod, Return, exec, $terminal"
-        "$modSHIFT, C, killactive"
+        "$modSHIFT, Q, killactive"
         "$modSHIFT, M, exit"
         "$mod, h, movefocus, l"
         "$mod, j, movefocus, d"
