@@ -48,7 +48,8 @@ in
   # Import .nix which are made for hyprland config
   imports = [
     ./wofi.nix # Notification handler
-    ./waybar.nix # Status bar
+    # ./waybar.nix # Status bar
+    ./hyprpanel.nix # Status bar
   ];
 
   # You need me!
@@ -69,19 +70,19 @@ in
   };
 
   # Notification handler
-  services.dunst = {
-    enable = true;
-    settings = {
-      global = {
-        monitor = 1;
-        timeout = 10;
-        offset = "30x30";
-        transparency = 10;
-        corner_radius = 10;
-        font = "FiraCode Nerd Font";
-      };
-    };
-  };
+  # services.dunst = {
+  #   enable = true;
+  #   settings = {
+  #     global = {
+  #       monitor = 1;
+  #       timeout = 10;
+  #       offset = "30x30";
+  #       transparency = 10;
+  #       corner_radius = 10;
+  #       font = "FiraCode Nerd Font";
+  #     };
+  #   };
+  # };
 
   # hyprland
   wayland.windowManager.hyprland = {

@@ -17,6 +17,12 @@
       url = "github:hyprwm/hyprland-qtutils";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Hyprpanel
+    hyprpanel = {
+      url = "github:jas-singhfsu/hyprpanel";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -57,6 +63,7 @@
                   inherit host;
                   inherit username;
                   hyprland-qtutils = inputs.hyprland-qtutils;
+                  hyprpanel = inputs.hyprpanel;
                 };
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;

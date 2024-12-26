@@ -13,7 +13,9 @@
   home.homeDirectory = "/home/${username}";
   home.stateVersion = "24.11";
 
-  imports = [ ./hyprland.nix ];
+  imports = [
+    ./hyprland.nix
+  ];
 
   home.packages = with pkgs; [
     bitwarden
