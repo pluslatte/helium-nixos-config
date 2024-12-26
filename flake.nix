@@ -8,6 +8,13 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Recommended by hyprland
+    # https://www.reddit.com/r/NixOS/comments/1hkr6ir/flake_update_introduced_the_recommended/
+    hyprland-qtutils = {
+      url = "github:hyprwm/hyprland-qtutils";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -35,6 +42,7 @@
                 inherit system;
                 inherit host;
                 inherit username;
+                hyprland-qtutils = inputs.hyprland-qtutils;
               };
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;

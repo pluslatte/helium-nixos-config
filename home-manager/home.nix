@@ -1,7 +1,9 @@
 {
   pkgs,
+  system,
   username,
   host,
+  hyprland-qtutils,
   ...
 }:
 {
@@ -13,6 +15,7 @@
   home.stateVersion = "24.11";
   home.packages = with pkgs; [
     xdg-utils
+    hyprland-qtutils.packages."${system}".default
   ];
 
   # You need me!
