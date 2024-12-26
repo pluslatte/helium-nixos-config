@@ -1,13 +1,23 @@
-{ hyprpanel, ... }:
+{ hyprpanel, pkgs, ... }:
 {
   imports = [ hyprpanel.homeManagerModules.hyprpanel ];
+
+  home.packages = with pkgs; [
+    libgtop
+    bluez
+    bluez-tools
+    dart-sass
+    wl-clipboard
+    upower
+    gvfs
+  ];
 
   programs.hyprpanel = {
     enable = true;
     systemd.enable = true;
     hyprland.enable = true;
     overwrite.enable = true;
-    theme = "gruvbox_split";
+    theme = "gruvbox";
 
     layout = {
       "bar.layouts" = {
@@ -15,8 +25,6 @@
           left = [
             "dashboard"
             "battery"
-            # "cpu"
-            # "ram"
             "media"
             "windowtitle"
             "systray"
@@ -25,11 +33,11 @@
             "workspaces"
           ];
           right = [
-            "volume"
+            # "bluetooth"
             "network"
-            "bluetooth"
-            "notifications"
+            "volume"
             "clock"
+            "notifications"
           ];
         };
       };
@@ -38,6 +46,7 @@
     settings = {
       bar.launcher.autoDetectIcon = true;
       bar.workspaces.show_icons = true;
+      bar.clock.format = "%I:%M %p";
 
       menus.clock = {
         time = {
