@@ -73,6 +73,17 @@
       "$terminal" = "alacritty";
       "$mod" = "SUPER";
 
+      env = [
+        "NIXOS_OZONE_WL, 1"
+      ];
+
+      general = {
+        gaps_in = 5;
+        gaps_out = 5;
+        border_size = 2;
+        resize_on_border = true;
+      };
+
       input = {
         kb_layout = "jp";
       };
