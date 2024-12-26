@@ -37,11 +37,13 @@
     };
   };
   # systemd.user.sessionVariables = config.home-manager.users."${username}".home.sessionVariables;
-  # qt = {
-  #   enable = true;
-  #   platformTheme = "gnome";
-  #   style = "adwaita-dark";
-  # };
+  qt = {
+    enable = true;
+    platformTheme.name = "adwaita";
+    style = {
+      name = "adwaita-dark";
+    };
+  };
 
   # Shut up Discord update, I'm using NixOS.
   home.file.".config/discord/settings.json".text = ''
