@@ -28,6 +28,7 @@
         window = {
           padding.x = 12;
           padding.y = 12;
+          opacity = 0.8;
         };
 
         font = {
