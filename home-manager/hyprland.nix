@@ -189,7 +189,6 @@ in
 
         # Screenshot
         ", Print, exec, grimblast --notify copy output"
-        # does not work for some reason...
         ''$mod, Print, exec, grimblast --notify copysave output "$XDG_SCREENSHOTS_DIR/$(date +%Y-%m-%dT%H-%M-%S).png"''
       ];
 
