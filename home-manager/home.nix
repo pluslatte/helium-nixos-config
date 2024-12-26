@@ -26,8 +26,8 @@
       enable = true;
       settings = {
         window = {
-          padding.x = 5;
-          padding.y = 5;
+          padding.x = 12;
+          padding.y = 12;
         };
 
         font = {
