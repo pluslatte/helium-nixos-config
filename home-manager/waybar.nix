@@ -4,11 +4,13 @@
     waybar
   ];
 
+  # Mostly based on https://github.com/Egosummiki/dotfiles/blob/master/waybar/config
+
   home.file.".config/waybar/config".text = ''
     {
       "layer": "top",
-      "position": "bottom",
-      "height": 24,
+      "position": "top",
+      "height": 28,
       "modules-left": ["hyprland/workspaces"],
       "modules-center": ["hyprland/window"],
       "modules-right": [
@@ -31,21 +33,21 @@
       },
 
       "cpu": {
-        "format": "{usage}% "
+        "format": " {usage}%"
       },
 
       "memory": {
-          "format": "{}% "
+          "format": " {}%"
       },
 
       "battery": {
-          "bat": "BAT0",
+          // "bat": "BAT0",
           "states": {
               // "good": 95,
               "warning": 30,
               "critical": 15
           },
-          "format": "{capacity}% {icon}",
+          "format": "{icon} {capacity}%",
           // "format-good": "", // An empty format will hide the module
           // "format-full": "",
           "format-icons": ["", "", "", "", ""]
@@ -53,15 +55,15 @@
 
       "network": {
           // "interface": "wlp2s0", // (Optional) To force the use of this interface
-          "format-wifi": "{essid} ({signalStrength}%) ",
-          "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-          "format-disconnected": "Disconnected ⚠"
+          "format-wifi": " {essid} ({signalStrength}%)",
+          "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
+          "format-disconnected": "⚠ Disconnected"
       },
 
       "pulseaudio": {
           //"scroll-step": 1,
-          "format": "{volume}% {icon}",
-          "format-bluetooth": "{volume}% {icon}",
+          "format": "{icon} {volume}%",
+          "format-bluetooth": "{icon} {volume}%",
           "format-muted": "",
           "format-icons": {
               "headphones": "",
@@ -90,14 +92,14 @@
   home.file.".config/waybar/style.css".text = ''
     * {
         font-family: "FiraCode Nerd Font", monospace;
-        font-size: 13px;
+        font-size: 18px;
         border: none;
         border-radius: 0;
         min-height: 0;
     }
 
     window#waybar {
-        background-color: transparent;
+        background-color: rgba(40, 40, 40, 0.75);
         color: white;
     }
 
@@ -131,8 +133,8 @@
     #battery,
     #tray,
     #mode {
-        padding: 0 3px;
-        margin: 0 2px;
+        padding: 3px;
+        margin: 2px;
     }
 
     #clock {
