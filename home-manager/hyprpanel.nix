@@ -14,7 +14,7 @@
     hyprpicker
     hyprsunset
     hypridle
-    gpu-screen-recorder
+    # gpu-screen-recorder
     btop
   ];
 
@@ -62,10 +62,26 @@
           military = true;
           hideSeconds = true;
         };
+        weather.enabled = false;
       };
 
       menus.dashboard.directories.enabled = false;
-      menus.dashboard.stats.enable_gpu = true;
+      menus.dashboard.stats.enable_gpu = false;
+
+      menus.dashboard.shortcuts = {
+        enabled = true;
+        left = {
+          shortcut1 = {
+            command = "firefox";
+            icon = "󰈹";
+            tooltip = "Firefox";
+          };
+          shortcut4 = {
+            command = "wofi -S drun";
+            tooltip = "launcher";
+          };
+        };
+      };
 
       theme.bar.transparent = true;
 
