@@ -87,7 +87,7 @@
         "XDG_SESSION_TYPE, wayland"
         "XDG_SESSION_DESKTOP, Hyprland"
         "QT_QPA_PLATFORM, Hyprland"
-        "XDG_SCREENSHOTS_DIR, $HOME/screens"
+        # "XDG_SCREENSHOTS_DIR, $HOME/screens"
       ];
 
       exec-once = [
@@ -103,7 +103,11 @@
       };
 
       input = {
+        # I use JIS keyboard!
         kb_layout = "jp";
+
+        # Touchpad scrolling
+        scroll_method = "edge";
       };
 
       decoration = {
@@ -186,7 +190,7 @@
         "$mod, mouse:273, resizewindow"
       ];
 
-      # hardware button bind?
+      # laptop button bind
       bindl = [
         # volume control
         ", XF86AudioMute, exec, pamixer -t"
