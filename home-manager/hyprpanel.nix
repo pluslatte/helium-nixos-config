@@ -2,6 +2,17 @@
 {
   imports = [ hyprpanel.homeManagerModules.hyprpanel ];
 
+  home.file = {
+    # My avatar image.
+    "myAvatar.jpg" = {
+      target = ".config/hypr/wallpaper/myAvatar.jpg";
+      source = pkgs.fetchurl {
+        url = "https://media.virtualkemomimi.net/files/0abd8ae2-7083-45bf-bcda-5eceb49dc1a9.png";
+        sha256 = "sha256-JcJDPTN0Y1OAWKhXF5fo8esdk39AB3vWwpwklY0oVQ8=";
+      };
+    };
+  };
+
   home.packages = with pkgs; [
     libgtop
     bluez
@@ -68,6 +79,8 @@
       menus.dashboard.directories.enabled = false;
       menus.dashboard.stats.enable_gpu = false;
 
+      menus.dashboard.powermenu.avatar.image = ".config/hypr/wallpaper/myAvatar.jpg";
+
       menus.dashboard.shortcuts = {
         enabled = false;
         left = {
@@ -84,6 +97,8 @@
       };
 
       theme.bar.transparent = true;
+      theme.bar.menus.opacity = 100;
+      theme.bar.buttons.opacity = 90;
 
       theme.font = {
         name = "FiraCode Nerd Font";
