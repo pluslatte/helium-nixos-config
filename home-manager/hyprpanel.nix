@@ -69,7 +69,7 @@
       menus.dashboard.stats.enable_gpu = false;
 
       menus.dashboard.shortcuts = {
-        enabled = true;
+        enabled = false;
         left = {
           shortcut1 = {
             command = "firefox";
