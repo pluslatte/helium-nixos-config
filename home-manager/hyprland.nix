@@ -2,8 +2,12 @@
   pkgs,
   system,
   hyprland-qtutils,
+  username,
   ...
 }:
+let
+  screenShotsDir = "/home/${username}/screenShots";
+in
 {
   # Dependancies
   home.packages = with pkgs; [
@@ -30,6 +34,10 @@
         url = "https://gruvbox-wallpapers.pages.dev/wallpapers/anime/wallhaven-2e2xyx.jpg";
         sha256 = "sha256-mFp4f9WOBJcYDZjkU7QWIP793+8VhU6TrekuIDpSgf8=";
       };
+    };
+    "screenshots_here.txt" = {
+      target = "${screenShotsDir}/screenshots_here.txt";
+      text = "yippee!";
     };
   };
 
@@ -87,7 +95,7 @@
         "XDG_SESSION_TYPE, wayland"
         "XDG_SESSION_DESKTOP, Hyprland"
         "QT_QPA_PLATFORM, Hyprland"
-        # "XDG_SCREENSHOTS_DIR, $HOME/screens"
+        "XDG_SCREENSHOTS_DIR, ${screenShotsDir}"
       ];
 
       exec-once = [
@@ -181,7 +189,7 @@
         # Screenshot
         ", Print, exec, grimblast --notify copy output"
         # does not work for some reason...
-        # ''$mod, Print, exec, grimblast --notify copysave output "$HOME/Screenshots/$(date +%Y-%m-%dT%H:%M:%S).png"''
+        ''$mod, Print, exec, grimblast --notify copysave output "$XDG_SCREENSHOTS_DIR/$(date +%Y-%m-%dT%H-%M-%S).png"''
       ];
 
       # Mouse bind
