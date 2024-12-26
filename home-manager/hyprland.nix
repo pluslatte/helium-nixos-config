@@ -126,6 +126,7 @@
         "$mod, Return, exec, $terminal"
         "$modSHIFT, Q, killactive"
         "$modSHIFT, M, exit"
+        "$modSHIFT, F, togglefloating"
 
         # Window focus control
         "$mod, h, movefocus, l"
@@ -167,6 +168,12 @@
         ", Print, exec, grimblast --notify copy output"
         # does not work for some reason...
         # ''$mod, Print, exec, grimblast --notify copysave output "$HOME/Screenshots/$(date +%Y-%m-%dT%H:%M:%S).png"''
+      ];
+
+      # Mouse bind
+      bindm = [
+        "$mod, mouse:272, movewindow"
+        "$mod, mouse:273, resizewindow"
       ];
     };
   };
