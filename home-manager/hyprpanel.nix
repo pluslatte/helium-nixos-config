@@ -55,7 +55,6 @@
           military = true;
           hideSeconds = true;
         };
-        weather.unit = "metric";
       };
 
       menus.dashboard.directories.enabled = false;

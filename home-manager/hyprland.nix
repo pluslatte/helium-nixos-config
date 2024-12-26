@@ -98,9 +98,6 @@ in
 
         # For screen sharing
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-
-        # Status bar
-        "waybar &"
       ];
 
       general = {
