@@ -79,6 +79,10 @@
         "XDG_SCREENSHOTS_DIR, $HOME/screens"
       ];
 
+      exec-once = [
+        "swww init && swww img ~/.config/hypr/wallpaper/canyon.jpg"
+      ];
+
       general = {
         gaps_in = 5;
         gaps_out = 5;
