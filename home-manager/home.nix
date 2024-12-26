@@ -16,7 +16,20 @@
     git = {
       enable = true;
     };
-    alacritty.enable = true;
+    alacritty = {
+      enable = true;
+      settings = {
+        window = {
+          padding.x = 5;
+          padding.y = 5;
+        };
+
+        font = {
+          size = 11;
+          normal.family = "FiraCode Nerd Font";
+        };
+      };
+    };
     firefox.enable = true;
     vim.enable = true;
   };
