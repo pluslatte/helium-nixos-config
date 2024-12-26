@@ -141,13 +141,18 @@
 
       monitor = [ ",preferred,auto,1" ];
       bind = [
+        # Basic
         "$mod, Return, exec, $terminal"
         "$modSHIFT, Q, killactive"
         "$modSHIFT, M, exit"
+
+        # Window focus control
         "$mod, h, movefocus, l"
         "$mod, j, movefocus, d"
         "$mod, k, movefocus, u"
         "$mod, l, movefocus, r"
+
+        # Workspace operations
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"
         "$mod, 3, workspace, 3"
@@ -168,6 +173,10 @@
         "$modSHIFT, 8, movetoworkspace, 8"
         "$modSHIFT, 9, movetoworkspace, 9"
         "$modSHIFT, 0, movetoworkspace, 10"
+
+        # Wofi binds
+        "$mod, d, exec, wofi --show drun"
+        "$mod, period, exec, wofi-emoji"
       ];
     };
   };
