@@ -14,13 +14,22 @@
         "0" = {
           left = [
             "dashboard"
+            "battery"
+            # "cpu"
+            # "ram"
+            "media"
+            "windowtitle"
+            "systray"
+          ];
+          middle = [
             "workspaces"
           ];
-          middle = [ "media" ];
           right = [
             "volume"
-            "systray"
+            "network"
+            "bluetooth"
             "notifications"
+            "clock"
           ];
         };
       };
