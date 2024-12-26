@@ -35,6 +35,7 @@ in
         sha256 = "sha256-mFp4f9WOBJcYDZjkU7QWIP793+8VhU6TrekuIDpSgf8=";
       };
     };
+    # To be honest, You need this to make screenshot save working.
     "screenshots_here.txt" = {
       target = "${screenShotsDir}/screenshots_here.txt";
       text = "yippee!";
