@@ -7,6 +7,7 @@
   home.file.".config/waybar/config".text = ''
     {
       "layer": "top",
+      "position": "bottom",
       "height": 30,
       "modules-left": ["hyprland/workspaces"],
       "modules-center": ["clock", "hyprland/window"],
@@ -24,4 +25,6 @@
       ]
     }
   '';
+
+  home.file.".config/waybar/style.css".text = '''';
 }
