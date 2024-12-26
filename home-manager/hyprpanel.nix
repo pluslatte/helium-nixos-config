@@ -11,6 +11,11 @@
     wl-clipboard
     upower
     gvfs
+    hyprpicker
+    hyprsunset
+    hypridle
+    gpu-screen-recorder
+    btop
   ];
 
   programs.hyprpanel = {
@@ -39,6 +44,8 @@
             "network"
             "volume"
             "clock"
+            "hyprsunset"
+            "hypridle"
             "notifications"
           ];
         };
