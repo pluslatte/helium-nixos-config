@@ -2,7 +2,9 @@
   description = "helium-nixos-config";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs = {
+      url = "github:nixos/nixpkgs/nixos-unstable";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -26,30 +28,42 @@
     in
     {
       nixosConfigurations = {
-        "${host}" = nixpkgs.lib.nixosSystem {
-          inherit system;
-          specialArgs = {
-            inherit system;
-            inherit host;
-            inherit username;
-          };
-          modules = [
-            ./nixos/configuration.nix
-
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.extraSpecialArgs = {
-                inherit system;
-                inherit host;
-                inherit username;
-                hyprland-qtutils = inputs.hyprland-qtutils;
+        "${host}" =
+          let
+            # Workaround https://stackoverflow.com/questions/77585228/how-to-allow-unfree-packages-in-nix-for-each-situation-nixos-nix-nix-wit
+            pkgs = import nixpkgs {
+              inherit system;
+              config = {
+                allowUnfree = true;
+                allowUnfreePredicate = _: true;
               };
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users."${username}" = import ./home-manager/home.nix;
-            }
-          ];
-        };
+            };
+          in
+          nixpkgs.lib.nixosSystem {
+            inherit system;
+            specialArgs = {
+              inherit system;
+              inherit host;
+              inherit username;
+              inherit pkgs;
+            };
+            modules = [
+              ./nixos/configuration.nix
+
+              home-manager.nixosModules.home-manager
+              {
+                home-manager.extraSpecialArgs = {
+                  inherit system;
+                  inherit host;
+                  inherit username;
+                  hyprland-qtutils = inputs.hyprland-qtutils;
+                };
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
+                home-manager.users."${username}" = import ./home-manager/home.nix;
+              }
+            ];
+          };
       };
     };
 }

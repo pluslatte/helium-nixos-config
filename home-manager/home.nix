@@ -15,6 +15,10 @@
 
   imports = [ ./hyprland.nix ];
 
+  home.packages = with pkgs; [
+    spotify
+  ];
+
   programs = {
     # Git
     git = {

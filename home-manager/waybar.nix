@@ -10,7 +10,7 @@
     {
       "layer": "top",
       "position": "top",
-      "height": 28,
+      "height": 26,
       "modules-left": ["hyprland/workspaces"],
       "modules-center": ["hyprland/window"],
       "modules-right": [
@@ -55,7 +55,7 @@
 
       "network": {
           // "interface": "wlp2s0", // (Optional) To force the use of this interface
-          "format-wifi": " {essid} ({signalStrength}%)",
+          "format-wifi": " {essid}", // ({signalStrength}%)",
           "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
           "format-disconnected": "⚠ Disconnected"
       },
@@ -92,7 +92,7 @@
   home.file.".config/waybar/style.css".text = ''
     * {
         font-family: "FiraCode Nerd Font", monospace;
-        font-size: 18px;
+        font-size: 16px;
         border: none;
         border-radius: 0;
         min-height: 0;
