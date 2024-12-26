@@ -27,10 +27,14 @@
       "$terminal" = "alacritty";
       "$mod" = "SUPER";
 
-      monitor = [ ",preferred,auto,auto" ];
+      input = {
+        kb_layout = "jp";
+      };
+
+      monitor = [ ",preferred,auto,1" ];
       bind = [
         "$mod, Return, exec, $terminal"
-        "$modSHIFT, Q, exec, killactive"
+        "$modSHIFT, C, killactive"
         "$modSHIFT, M, exit"
         "$mod, h, movefocus, l"
         "$mod, j, movefocus, d"
