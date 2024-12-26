@@ -23,6 +23,7 @@
     spotify
   ];
 
+  # Force dark-theme
   dconf.settings = {
     "org/gnome/desktop/background" = {
       picture-uri-dark = "file://${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.src}";
@@ -53,6 +54,24 @@
       "SKIP_HOST_UPDATE": true
     }
   '';
+
+  # For typing Japanese
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5.addons = with pkgs; [
+      fcitx5-mozc
+      # kdePackages.fcitx5-qt
+      # fcitx5-gtk
+      # fcitx5-mellow-themes
+    ];
+  };
+  home.file = {
+    ".xprofile".text = ''
+      export GTK_IM_MODULE=fcitx
+      export QT_IM_MODULE=fcitx
+      export XMODIFIERS=@im=fcitx
+    '';
+  };
 
   programs = {
     # Git
