@@ -11,8 +11,10 @@
     hyprland-qtutils.packages."${system}".default
 
     swww # Wallpaper
+    grimblast # Screenshot
   ];
   home.file = {
+    # An image from gruvbox-wallpapers, for my wallpaper.
     "canyon.jpg" = {
       target = ".config/hypr/wallpaper/canyon.jpg";
       source = pkgs.fetchurl {
@@ -160,6 +162,11 @@
         # Wofi binds
         "$mod, d, exec, wofi --show drun"
         "$mod, period, exec, wofi-emoji"
+
+        # Screenshot
+        ", Print, exec, grimblast --notify copy output"
+        # does not work for some reason...
+        # ''$mod, Print, exec, grimblast --notify copysave output "$HOME/Screenshots/$(date +%Y-%m-%dT%H:%M:%S).png"''
       ];
     };
   };
