@@ -13,6 +13,9 @@ in
   home.packages = with pkgs; [
     xdg-utils
     hyprland-qtutils.packages."${system}".default
+    grim # for screen sharing
+    slurp # for screen sharing
+    xwaylandvideobridge # for screen sharing
 
     brightnessctl # screen brightness control
     pamixer # pluseaudio mixer
@@ -52,6 +55,7 @@ in
   xdg.enable = true;
   xdg.portal = {
     extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
       xdg-desktop-portal-hyprland
     ];
     config = {
@@ -105,6 +109,9 @@ in
       exec-once = [
         # Set my lovely wallpaper
         "swww init && swww img ~/.config/hypr/wallpaper/wallhaven-2e2xyx.jpg"
+
+        # For screen sharing
+        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
 
         # Status bar
         "waybar &"
