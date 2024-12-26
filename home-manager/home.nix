@@ -11,8 +11,23 @@
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";
   home.stateVersion = "24.11";
+  home.packages = with pkgs; [
+    xdg-utils
+  ];
   xdg.enable = true;
-  xdg.portal.enable = true;
+  xdg.portal = {
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-hyprland
+    ];
+    config = {
+      common.default = [ "gtk" ];
+      hyprland.default = [
+        "gtk"
+        "hyprland"
+      ];
+    };
+    enable = true;
+  };
 
   services.dunst = {
     enable = true;
