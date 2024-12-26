@@ -10,6 +10,8 @@
     xdg-utils
     hyprland-qtutils.packages."${system}".default
 
+    brightnessctl # screen brightness control
+    pamixer # pluseaudio mixer
     swww # Wallpaper
     grimblast # Screenshot
   ];
@@ -174,6 +176,21 @@
       bindm = [
         "$mod, mouse:272, movewindow"
         "$mod, mouse:273, resizewindow"
+      ];
+
+      # hardware button bind?
+      bindl = [
+        # volume control
+        ", XF86AudioMute, exec, pamixer -t"
+      ];
+      bindle = [
+        # volume control
+        ", XF86AudioRaiseVolume, exec, pamixer -i 10"
+        ", XF86AudioLowerVolume, exec, pamixer -d 10"
+
+        # monitor brightness control
+        ", XF86MonBrightnessUp, exec, brightnessctl set +10%"
+        ", XF86MonBrightnessDown, exec, brightnessctl set 10%-"
       ];
     };
   };
