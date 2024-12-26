@@ -26,7 +26,11 @@
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }@inputs:
+    {
+      nixpkgs,
+      home-manager,
+      ...
+    }@inputs:
     let
       system = "x86_64-linux";
       host = "helium";
@@ -62,8 +66,8 @@
                   inherit system;
                   inherit host;
                   inherit username;
-                  hyprland-qtutils = inputs.hyprland-qtutils;
                   hyprpanel = inputs.hyprpanel;
+                  hyprland-qtutils = inputs.hyprland-qtutils;
                 };
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;

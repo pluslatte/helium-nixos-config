@@ -6,6 +6,7 @@
     libgtop
     bluez
     bluez-tools
+    power-profiles-daemon
     dart-sass
     wl-clipboard
     upower
@@ -24,7 +25,8 @@
         "0" = {
           left = [
             "dashboard"
-            "battery"
+            # This does not work somehow...
+            # "battery"
             "media"
             "windowtitle"
             "systray"
