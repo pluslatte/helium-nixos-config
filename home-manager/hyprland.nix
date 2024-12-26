@@ -9,7 +9,18 @@
   home.packages = with pkgs; [
     xdg-utils
     hyprland-qtutils.packages."${system}".default
+
+    swww # Wallpaper
   ];
+  home.file = {
+    "canyon.jpg" = {
+      target = ".config/hypr/wallpaper/canyon.jpg";
+      source = pkgs.fetchurl {
+        url = "https://gruvbox-wallpapers.pages.dev/wallpapers/irl/canyon.jpg";
+        sha256 = "sha256-om/f73Il7el7OWa1lbOngZW5N1o2zi+kWXTHOyiLXs0=";
+      };
+    };
+  };
 
   # Import .nix which are made for hyprland config
   imports = [ ./wofi.nix ];
