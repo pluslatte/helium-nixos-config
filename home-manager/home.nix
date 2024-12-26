@@ -14,6 +14,8 @@
   home.packages = with pkgs; [
     xdg-utils
   ];
+
+  # You need me!
   xdg.enable = true;
   xdg.portal = {
     extraPortals = with pkgs; [
@@ -29,6 +31,7 @@
     enable = true;
   };
 
+  # Notification handler
   services.dunst = {
     enable = true;
     settings = {
@@ -44,9 +47,12 @@
   };
 
   programs = {
+    # Git
     git = {
       enable = true;
     };
+
+    # Terminal emulator
     alacritty = {
       enable = true;
       settings = {
@@ -61,7 +67,11 @@
         };
       };
     };
+
+    # Web browser
     firefox.enable = true;
+
+    # Vim
     vim.enable = true;
   };
 
@@ -69,6 +79,8 @@
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
+
+    # Settings here
     settings = {
       "$terminal" = "alacritty";
       "$mod" = "SUPER";
@@ -82,6 +94,18 @@
         gaps_out = 5;
         border_size = 2;
         resize_on_border = true;
+      };
+
+      decoration = {
+        rounding = 10;
+        blur = {
+          enabled = true;
+          size = 3;
+          passes = 1;
+          xray = true;
+          ignore_opacity = true;
+          new_optimizations = true;
+        };
       };
 
       input = {
