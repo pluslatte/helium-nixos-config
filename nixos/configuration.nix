@@ -88,7 +88,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     curl
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    vim
     wget
     bottom
     neofetch
@@ -97,6 +97,8 @@
   # Add fonts
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code
+    noto-fonts-cjk-sans
+    noto-fonts-cjk-serif
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

@@ -91,7 +91,7 @@
 
   home.file.".config/waybar/style.css".text = ''
     * {
-        font-family: "FiraCode Nerd Font", monospace;
+        font-family: "FiraCode Nerd Font", "Noto Sans CJK", monospace;
         font-size: 16px;
         border: none;
         border-radius: 0;
