@@ -12,6 +12,20 @@
   home.homeDirectory = "/home/${username}";
   home.stateVersion = "24.11";
 
+  services.dunst = {
+    enable = true;
+    settings = {
+      global = {
+        monitor = 1;
+        timeout = 10;
+        offset = "30x30";
+        transparency = 10;
+        corner_radius = 10;
+        font = "FiraCode Nerd Font";
+      };
+    };
+  };
+
   programs = {
     git = {
       enable = true;
