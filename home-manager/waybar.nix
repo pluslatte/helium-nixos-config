@@ -4,6 +4,21 @@
     waybar
   ];
 
+  # Notification handler
+  services.dunst = {
+    enable = true;
+    settings = {
+      global = {
+        monitor = 1;
+        timeout = 10;
+        offset = "30x30";
+        transparency = 10;
+        corner_radius = 10;
+        font = "FiraCode Nerd Font";
+      };
+    };
+  };
+
   # Mostly based on https://github.com/Egosummiki/dotfiles/blob/master/waybar/config
 
   home.file.".config/waybar/config".text = ''
