@@ -55,6 +55,10 @@
       "$terminal" = "alacritty";
       "$mod" = "SUPER";
 
+      misc = {
+        disable_hyprland_logo = true;
+      };
+
       env = [
         "NIXOS_OZONE_WL, 1"
         "XDG_CURRENT_DESKTOP, Hyprland"
@@ -71,6 +75,10 @@
         resize_on_border = true;
       };
 
+      input = {
+        kb_layout = "jp";
+      };
+
       decoration = {
         rounding = 10;
         blur = {
@@ -83,11 +91,19 @@
         };
       };
 
-      input = {
-        kb_layout = "jp";
+      animations = {
+        bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
+        animation = [
+          "windows, 1, 4, myBezier, slide"
+          "layers, 1, 4, myBezier, fade"
+          "border, 1, 5, default"
+          "fade, 1, 5, default"
+          "workspaces, 1, 6, default"
+        ];
       };
 
       monitor = [ ",preferred,auto,1" ];
+
       bind = [
         # Basic
         "$mod, Return, exec, $terminal"
