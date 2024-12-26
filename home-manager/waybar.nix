@@ -8,91 +8,187 @@
     {
       "layer": "top",
       "position": "bottom",
-      "height": 30,
+      "height": 24,
       "modules-left": ["hyprland/workspaces"],
-      "modules-center": ["clock", "hyprland/window"],
+      "modules-center": ["hyprland/window"],
       "modules-right": [
-        "idle_inhibitor",
         "pulseaudio",
         "network",
         "cpu",
         "memory",
-        "temperature",
-        "backlight",
-        "keyboard-state",
         "battery",
-        "tray"
-      ]
+        "tray",
+        "clock"
+      ],
+
+      // modules settings
+      "tray": {
+        "spacing": 10
+      },
+
+      "clock": {
+        "format-alt": "{:%Y-%m-%d}"
+      },
+
+      "cpu": {
+        "format": "{usage}% "
+      },
+
+      "memory": {
+          "format": "{}% "
+      },
+
+      "battery": {
+          "bat": "BAT0",
+          "states": {
+              // "good": 95,
+              "warning": 30,
+              "critical": 15
+          },
+          "format": "{capacity}% {icon}",
+          // "format-good": "", // An empty format will hide the module
+          // "format-full": "",
+          "format-icons": ["", "", "", "", ""]
+      },
+
+      "network": {
+          // "interface": "wlp2s0", // (Optional) To force the use of this interface
+          "format-wifi": "{essid} ({signalStrength}%) ",
+          "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+          "format-disconnected": "Disconnected ⚠"
+      },
+
+      "pulseaudio": {
+          //"scroll-step": 1,
+          "format": "{volume}% {icon}",
+          "format-bluetooth": "{volume}% {icon}",
+          "format-muted": "",
+          "format-icons": {
+              "headphones": "",
+              "handsfree": "",
+              "headset": "",
+              "phone": "",
+              "portable": "",
+              "car": "",
+              "default": ["", ""]
+          },
+          "on-click": "pavucontrol"
+      },
+
+      /*
+      "custom/spotify": {
+          "format": " {}",
+          "max-length": 40,
+          "interval": 30, // Remove this if your script is endless and write in loop
+          "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null", // Script in resources folder
+          "exec-if": "pgrep spotify"
+      }
+      */
     }
   '';
 
   home.file.".config/waybar/style.css".text = ''
     * {
         font-family: "FiraCode Nerd Font", monospace;
-        font-size: 20px;
-        border: 4px;
-        padding: 0;
-        margin: 0;
+        font-size: 13px;
+        border: none;
+        border-radius: 0;
+        min-height: 0;
     }
 
     window#waybar {
-        background-color: #282828;
-        color: #ebdbb2;
+        background-color: transparent;
+        color: white;
+    }
+
+    #window {
+        font-weight: bold;
+        font-family: "FiraCode Nerd Font";
+    }
+
+    #workspaces button {
+        padding: 0 5px;
+        background: transparent;
+        color: white;
+        border-top: 2px solid transparent;
+    }
+
+    #workspaces button.focused {
+        color: #c9545d;
+        border-top: 2px solid #c9545d;
+    }
+
+    #mode {
+        background: #64727D;
+        border-bottom: 3px solid white;
     }
 
     #clock,
     #memory,
     #cpu,
     #network,
+    #pulseaudio,
     #battery,
-    #tray {
-        padding: 0 10px;
+    #tray,
+    #mode {
+        padding: 0 3px;
+        margin: 0 2px;
     }
 
     #clock {
-        background-color: #d79921;
-        border-radius: 5px;
+        font-weight: bold;
     }
 
     #battery {
-        background-color: #cc241d;
-        border-radius: 5px;
+    }
+
+    #battery.icon {
+        color: red;
+    }
+
+    #battery.charging {
+    }
+
+    @keyframes blink {
+        to {
+            background-color: #ffffff;
+            color: black;
+        }
+    }
+
+    #battery.warning:not(.charging) {
+        color: white;
+        animation-name: blink;
+        animation-duration: 0.5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
     }
 
     #cpu {
-        background-color: #458588;
-        border-radius: 5px;
     }
 
     #memory {
-        background-color: #b16286;
-        border-radius: 5px;
     }
 
     #network {
-        background-color: #689d6a;
-        border-radius: 5px;
+    }
+
+    #network.disconnected {
+        background: #f53c3c;
+    }
+
+    #pulseaudio {
+    }
+
+    #pulseaudio.muted {
+    }
+
+    #custom-spotify {
+        color: rgb(102, 220, 105);
     }
 
     #tray {
-        background-color: #d65d0e;
-        border-radius: 5px;
-    }
-
-    #workspaces button {
-        background: transparent;
-        border: none;
-        padding: 5px 10px;
-        border-radius: 5px;
-        transition: background-color 0.3s;
-    }
-
-    #workspaces button.focused {
-        background-color: #d79921;
-    }
-
-    #workspaces button:hover {
-        background-color: rgba(255, 255, 255, 0.2);
     }
   '';
 }
