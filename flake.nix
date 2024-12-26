@@ -1,5 +1,5 @@
 {
-  description = "helium-nixos-config";
+  description = "helium, the portable nixOS setup with hyprland in USB SSD stick";
 
   inputs = {
     nixpkgs = {
@@ -45,7 +45,7 @@
               inherit system;
               inherit host;
               inherit username;
-              inherit pkgs;
+              inherit pkgs; # Ensure "same" nixpkgs is used.
             };
             modules = [
               ./nixos/configuration.nix
