@@ -132,11 +132,11 @@ in
         # Set my lovely wallpaper
         "swww init && swww img ~/.config/hypr/wallpaper/wallhaven-2e2xyx.jpg"
 
-        # For screen sharing
-        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-
         # Set cursor
         "hyprctl setcursor ${cursorTheme} ${toString cursorSize}"
+
+        # For screen sharing
+        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       ];
 
       general = {
