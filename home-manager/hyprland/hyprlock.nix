@@ -1,5 +1,7 @@
 { ... }:
 {
+  # https://github.com/turtton/dotnix/blob/main/home-manager/wm/hyprland/hyprlock.nix
+
   programs.hyprlock = {
     enable = true;
     settings = {
