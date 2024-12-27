@@ -17,7 +17,7 @@ This is my nixos config which is installed on my portable stick USB SSD.
     - You can `nixos-generate-config --dir ./` to auto-generate this on installation to the new storage.
 - `home-manager` directory contains many of user-layer configurations.
     - `latte` will be the main user of this system. So you may want to make user `latte` on installation process before applying this config.
-- `hyprland` contains desktop-environment configurations. This contains many GUI utils.
+- `home-manager/hyprland` directory contains desktop-environment configurations. This contains many GUI utils.
     - You can look into those codes if you don't know how to operate this system. Example: SUPER+Enter to open your terminal emulator.
 
 ## Tips
