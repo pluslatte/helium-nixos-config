@@ -25,6 +25,7 @@
     vscode
     pcmanfm # File manager
     eog # Image viewer
+    totem # Media player
   ];
 
   # Shut up Discord update, I'm using NixOS.
