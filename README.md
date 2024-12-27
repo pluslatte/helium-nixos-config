@@ -2,9 +2,10 @@
 This is my nixos config which is installed on my portable stick USB SSD.
 
 ## Usage
-- Ensure you have login-able user named `latte`.
-- Ensure you have enabled nix experimental features like `nix-command` `flakes`.
+- Ensure you have a NixOS system with login-able user named `latte`.
+- Ensure you have enabled experimental features of `nix` like `nix-command` `flakes`.
 - `git clone` this.
+- (If you are doing an new installation on new device) `nixos-generate-config --dir ./nixos/` at the root of this repository.
 - `sudo nixos-rebuild switch --flake .#helium` at the root of this repository.
 
 ## Structure
@@ -26,3 +27,5 @@ This is my nixos config which is installed on my portable stick USB SSD.
     - `nix profile install github:pluslatte/nixvim-config` then `nvim`
     - `space -> e` to open neo-tree
 - When you dual-boot with windows system, **disable windows' fast-startup thing** or wi-fi won't work.
+- If you temporaly need some software for some reason, you can `nix run nixpkgs#<packageName>`.
+- Files which aren't tracked by git will be ignored, because flake is a git repository.
