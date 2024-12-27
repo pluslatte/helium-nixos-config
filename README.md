@@ -19,3 +19,10 @@ This is my nixos config which is installed on my portable stick USB SSD.
     - `latte` will be the main user of this system. So you may want to make user `latte` on installation process before applying this config.
 - `hyprland` contains desktop-environment configurations. This contains many GUI utils.
     - You can look into those codes if you don't know how to operate this system. Example: SUPER+Enter to open your terminal emulator.
+
+## Tips
+- If you don't have any working editor environments for Nix Language, you can use my pre-configured neovim.
+    - Ensure you enabled nix experimental features like `nix-command` `flakes`.
+    - `nix profile install github:pluslatte/nixvim-config` then `nvim`
+    - `space -> e` to open neo-tree
+- When you dual-boot with windows system, **disable windows' fast-startup thing** or wi-fi won't work.
