@@ -13,7 +13,7 @@
       font-weight: bold;
       margin: 0px;
       border-radius: 10px;
-      background-color: rgba(27, 30, 43, 0.9);
+      background-color: rgba(40, 40, 40, 0.9);
     }
 
     #input {
@@ -23,7 +23,7 @@
       margin: 5px;
       border: none;
       color: #c8d3f5;
-      background-color: rgba(200, 211, 245, 0.2);
+      background-color: rgba(80, 73, 69, 0.2);
     }
 
     #inner-box {
@@ -46,7 +46,7 @@
     #text {
       margin: 5px;
       border: none;
-      color: #c8d3f5;
+      color: #ebdbb2;
     }
 
     #entry {
@@ -58,7 +58,7 @@
     }
 
     #entry:selected {
-      background-color: rgba(200, 211, 245, 0.2);
+      background-color: rgba(214, 94, 14, 0.2);
       border-radius: 5px;
       border: none;
     }

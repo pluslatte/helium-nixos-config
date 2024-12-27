@@ -99,6 +99,8 @@
       theme.bar.transparent = true;
       theme.bar.menus.opacity = 100;
       theme.bar.buttons.opacity = 90;
+      theme.bar.buttons.enableBorders = true;
+      theme.bar.buttons.borderSize = "0.05em";
 
       theme.font = {
         name = "FiraCode Nerd Font";

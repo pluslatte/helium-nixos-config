@@ -144,6 +144,8 @@ in
         gaps_out = 5;
         border_size = 1;
         resize_on_border = true;
+        "col.inactive_border" = "0xff282828";
+        "col.active_border" = "0xffebdbb2";
       };
 
       input = {
