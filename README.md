@@ -3,7 +3,7 @@ This is my nixos config which is installed on my portable stick USB SSD.
 
 ## Usage
 - Ensure you have login-able user named `latte`.
-- Ensure you enabled nix experimental features like `nix-command` `flakes`.
+- Ensure you have enabled nix experimental features like `nix-command` `flakes`.
 - `git clone` this.
 - `sudo nixos-rebuild switch --flake .#helium` inside the directory.
 
@@ -22,7 +22,7 @@ This is my nixos config which is installed on my portable stick USB SSD.
 
 ## Tips
 - If you don't have any working editor environments for Nix Language, you can use my pre-configured neovim.
-    - Ensure you enabled nix experimental features like `nix-command` `flakes`.
+    - Ensure you have enabled nix experimental features like `nix-command` `flakes`.
     - `nix profile install github:pluslatte/nixvim-config` then `nvim`
     - `space -> e` to open neo-tree
 - When you dual-boot with windows system, **disable windows' fast-startup thing** or wi-fi won't work.
