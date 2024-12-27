@@ -12,6 +12,14 @@ let
   qtTheme = "adwaita-dark";
 in
 {
+  # Import .nix which are made for hyprland config
+  imports = [
+    ./wofi.nix # Notification handler
+    # ./waybar.nix # Status bar
+    ./hyprpanel.nix # Status bar
+    ./hyprlock.nix # Screen lock
+  ];
+
   # Dependancies
   home.packages = with pkgs; [
     xdg-utils
@@ -49,13 +57,6 @@ in
       text = "yippee!";
     };
   };
-
-  # Import .nix which are made for hyprland config
-  imports = [
-    ./wofi.nix # Notification handler
-    # ./waybar.nix # Status bar
-    ./hyprpanel.nix # Status bar
-  ];
 
   # You need me!
   xdg.enable = true;

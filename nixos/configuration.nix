@@ -10,6 +10,10 @@
 }:
 
 {
+  # For hyprlock
+  # How do I separate this?
+  security.pam.services.hyprlock = { };
+
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
