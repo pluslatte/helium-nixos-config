@@ -225,6 +225,9 @@ in
         "$mod, d, exec, wofi --show drun"
         "$mod, period, exec, wofi-emoji"
 
+        # hyprlock
+        "$modSHIFT, R, exec, pidof hyprlock || hyprlock"
+
         # Screenshot
         ", Print, exec, grimblast --notify copy output"
         ''$mod, Print, exec, grimblast --notify copysave output "$XDG_SCREENSHOTS_DIR/$(date +%Y-%m-%dT%H-%M-%S).png"''
