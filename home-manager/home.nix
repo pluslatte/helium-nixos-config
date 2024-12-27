@@ -14,13 +14,15 @@
   home.stateVersion = "24.11";
 
   imports = [
-    ./hyprland.nix
+    ./hyprland
   ];
 
   home.packages = with pkgs; [
     bitwarden
     # Discord screensharing works poorly on hyprland, and you have a browser version of Discord.
     # discord
+    galculator # Calculator
+    obsidian # Markdown IDE
     spotify
     vscode
     pcmanfm # File manager
