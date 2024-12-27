@@ -5,7 +5,7 @@ This is my nixos config which is installed on my portable stick USB SSD.
 - Ensure you have login-able user named `latte`.
 - Ensure you have enabled nix experimental features like `nix-command` `flakes`.
 - `git clone` this.
-- `sudo nixos-rebuild switch --flake .#helium` inside the directory.
+- `sudo nixos-rebuild switch --flake .#helium` at the root of this repository.
 
 ## Structure
 - `flake.nix` is the entry point of this config.
