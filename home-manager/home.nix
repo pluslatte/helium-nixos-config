@@ -22,6 +22,7 @@
     # Discord screensharing works poorly on hyprland, and you have a browser version of Discord.
     # discord
     spotify
+    vscode
   ];
 
   # Shut up Discord update, I'm using NixOS.
