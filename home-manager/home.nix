@@ -25,11 +25,11 @@
   ];
 
   # Shut up Discord update, I'm using NixOS.
-  home.file.".config/discord/settings.json".text = ''
-    {
-      "SKIP_HOST_UPDATE": true
-    }
-  '';
+  # home.file.".config/discord/settings.json".text = ''
+  #   {
+  #     "SKIP_HOST_UPDATE": true
+  #   }
+  # '';
 
   # For typing Japanese
   i18n.inputMethod = {
