@@ -23,6 +23,8 @@
     # discord
     spotify
     vscode
+    pcmanfm # File manager
+    eog # Image viewer
   ];
 
   # Shut up Discord update, I'm using NixOS.
