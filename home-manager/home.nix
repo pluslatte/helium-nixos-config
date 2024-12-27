@@ -23,31 +23,6 @@
     spotify
   ];
 
-  # Force dark-theme
-  dconf.settings = {
-    "org/gnome/desktop/background" = {
-      picture-uri-dark = "file://${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.src}";
-    };
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-    };
-  };
-  gtk = {
-    enable = true;
-    theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome-themes-extra;
-    };
-  };
-  # systemd.user.sessionVariables = config.home-manager.users."${username}".home.sessionVariables;
-  qt = {
-    enable = true;
-    platformTheme.name = "adwaita";
-    style = {
-      name = "adwaita-dark";
-    };
-  };
-
   # Shut up Discord update, I'm using NixOS.
   home.file.".config/discord/settings.json".text = ''
     {

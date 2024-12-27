@@ -9,6 +9,7 @@ let
   screenShotsDir = "/home/${username}/screenShots";
   cursorSize = 34;
   cursorTheme = "Nordzy-catppuccin-latte-dark";
+  qtTheme = "adwaita-dark";
 in
 {
   # Dependancies
@@ -73,8 +74,34 @@ in
     enable = true;
   };
 
+  # Cursor theme
   gtk.cursorTheme.name = "${cursorTheme}";
   gtk.cursorTheme.size = cursorSize;
+
+  # Force dark-theme
+  dconf.settings = {
+    "org/gnome/desktop/background" = {
+      picture-uri-dark = "file://${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.src}";
+    };
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+  };
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome-themes-extra;
+    };
+  };
+  # systemd.user.sessionVariables = config.home-manager.users."${username}".home.sessionVariables;
+  qt = {
+    enable = true;
+    platformTheme.name = "adwaita";
+    style = {
+      name = "${qtTheme}";
+    };
+  };
 
   # hyprland
   wayland.windowManager.hyprland = {
@@ -95,7 +122,8 @@ in
         "XDG_CURRENT_DESKTOP, Hyprland"
         "XDG_SESSION_TYPE, wayland"
         "XDG_SESSION_DESKTOP, Hyprland"
-        "QT_QPA_PLATFORM, Hyprland"
+        "QT_QPA_PLATFORM, Hyprland;wayland"
+        "QT_STYLE_OVERRIDE, ${qtTheme}"
         "XDG_SCREENSHOTS_DIR, ${screenShotsDir}"
         "XCURSOR_SIZE, ${toString cursorSize}"
       ];
