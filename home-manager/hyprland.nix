@@ -7,6 +7,8 @@
 }:
 let
   screenShotsDir = "/home/${username}/screenShots";
+  cursorSize = 34;
+  cursorTheme = "Nordzy-catppuccin-latte-dark";
 in
 {
   # Dependancies
@@ -21,6 +23,8 @@ in
     pamixer # pluseaudio mixer
     swww # Wallpaper
     grimblast # Screenshot
+
+    nordzy-cursor-theme # Cursor. Avaiable themes: https://github.com/guillaumeboehm/Nordzy-cursors/tree/main/xcursors
   ];
   home.file = {
     # An image from gruvbox-wallpapers, for my wallpaper.
@@ -69,6 +73,9 @@ in
     enable = true;
   };
 
+  gtk.cursorTheme.name = "${cursorTheme}";
+  gtk.cursorTheme.size = cursorSize;
+
   # hyprland
   wayland.windowManager.hyprland = {
     enable = true;
@@ -90,6 +97,7 @@ in
         "XDG_SESSION_DESKTOP, Hyprland"
         "QT_QPA_PLATFORM, Hyprland"
         "XDG_SCREENSHOTS_DIR, ${screenShotsDir}"
+        "XCURSOR_SIZE, ${toString cursorSize}"
       ];
 
       exec-once = [
@@ -98,6 +106,9 @@ in
 
         # For screen sharing
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+
+        # Set cursor
+        "hyprctl setcursor ${cursorTheme} ${toString cursorSize}"
       ];
 
       general = {
