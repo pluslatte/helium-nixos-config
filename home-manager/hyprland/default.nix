@@ -41,22 +41,7 @@ in
     # }) # Cursor.
   ];
   home.file = {
-    # An image from gruvbox-wallpapers, for my wallpaper.
-    # "canyon.jpg" = {
-    #   target = ".config/hypr/wallpaper/canyon.jpg";
-    #   source = pkgs.fetchurl {
-    #     url = "https://gruvbox-wallpapers.pages.dev/wallpapers/irl/canyon.jpg";
-    #     sha256 = "sha256-om/f73Il7el7OWa1lbOngZW5N1o2zi+kWXTHOyiLXs0=";
-    #   };
-    # };
-    # "wallhaven-2e2xyx.jpg" = {
-    #   target = ".config/hypr/wallpaper/wallhaven-2e2xyx.jpg";
-    #   source = pkgs.fetchurl {
-    #     url = "https://gruvbox-wallpapers.pages.dev/wallpapers/anime/wallhaven-2e2xyx.jpg";
-    #     sha256 = "sha256-mFp4f9WOBJcYDZjkU7QWIP793+8VhU6TrekuIDpSgf8=";
-    #   };
-    # };
-    # To be honest, You need this to make screenshot save working.
+    # You need this to make screenshot save working.
     "screenshots_here.txt" = {
       target = "${screenShotsDir}/screenshots_here.txt";
       text = "yippee!";
