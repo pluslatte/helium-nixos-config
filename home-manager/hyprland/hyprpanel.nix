@@ -27,6 +27,8 @@
     hypridle
     # gpu-screen-recorder
     btop
+    jq # JSON processor used in the "updates" module
+    vulnix # vulnerabilities scanner used in the "updates" module
 
     nerd-fonts.fira-code
   ];
@@ -43,6 +45,7 @@
         "0" = {
           left = [
             "dashboard"
+            "updates"
             # This does not work somehow...
             # "battery"
             "media"
@@ -68,12 +71,12 @@
     settings = {
       bar.launcher.autoDetectIcon = true;
       bar.workspaces.show_icons = true;
-      bar.clock.format = "%I:%M %p";
+      bar.clock.format = "%y/%m/%d %H:%M";
 
       menus.clock = {
         time = {
           military = true;
-          hideSeconds = true;
+          hideSeconds = false;
         };
         weather.enabled = false;
       };
@@ -107,6 +110,9 @@
         name = "FiraCode Nerd Font";
         size = "14px";
       };
+
+      bar.customModules.updates.updateCommand = "jq '[.[].cvssv3_basescore | to_entries | add | select(.value > 5)] | length' <<< $(vulnix -S --json)";
+      # bar.customModules.updates.icon = "󰋼";
     };
   };
 }
