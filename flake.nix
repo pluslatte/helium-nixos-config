@@ -24,6 +24,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Theme control
     stylix = {
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -47,7 +48,8 @@
       nixosConfigurations = {
         "${host}" =
           let
-            # Workaround https://stackoverflow.com/questions/77585228/how-to-allow-unfree-packages-in-nix-for-each-situation-nixos-nix-nix-wit
+            # Workaround
+            # https://stackoverflow.com/questions/77585228/how-to-allow-unfree-packages-in-nix-for-each-situation-nixos-nix-nix-wit
             pkgs = import nixpkgs {
               inherit system;
               config = {
@@ -62,7 +64,7 @@
               inherit system;
               inherit host;
               inherit username;
-              inherit pkgs; # Ensure "same" nixpkgs is used.
+              inherit pkgs; # Ensure "same" nixpkgs being used.
             };
             modules = [
               ./nixos/configuration.nix

@@ -2,6 +2,7 @@
 {
   # See this
   # https://stylix.danth.me/index.html
+  # Note that home-manager only settings have to be separately imported to home.nix
 
   stylix = {
     enable = true;
@@ -27,8 +28,10 @@
       sizes.popups = 10;
       sizes.terminal = 14;
       serif = {
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Serif";
+        # package = pkgs.dejavu_fonts;
+        # name = "DejaVu Serif";
+        package = pkgs.noto-fonts-cjk-serif;
+        name = "Noto Serif CJK";
       };
 
       sansSerif = {

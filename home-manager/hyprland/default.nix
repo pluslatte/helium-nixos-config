@@ -80,31 +80,6 @@ in
   gtk.cursorTheme.name = "${cursorTheme}";
   gtk.cursorTheme.size = cursorSize;
 
-  # Force dark-theme
-  # dconf.settings = {
-  #   "org/gnome/desktop/background" = {
-  #     picture-uri-dark = "file://${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.src}";
-  #   };
-  #   "org/gnome/desktop/interface" = {
-  #     color-scheme = "prefer-dark";
-  #   };
-  # };
-  # gtk = {
-  #   enable = true;
-  #   theme = {
-  #     name = "Adwaita-dark";
-  #     package = pkgs.gnome-themes-extra;
-  #   };
-  # };
-  # # systemd.user.sessionVariables = config.home-manager.users."${username}".home.sessionVariables;
-  # qt = {
-  #   enable = true;
-  #   platformTheme.name = "adwaita";
-  #   style = {
-  #     name = "${qtTheme}";
-  #   };
-  # };
-
   # hyprland
   wayland.windowManager.hyprland = {
     enable = true;
@@ -131,7 +106,7 @@ in
       ];
 
       exec-once = [
-        # Set my lovely wallpaper
+        # Wallpaper is handled by stylix now.
         # "swww init && swww img ~/.config/hypr/wallpaper/wallhaven-2e2xyx.jpg"
 
         # Set cursor
@@ -232,7 +207,7 @@ in
         # Screenshot
         ", Print, exec, grimblast --notify copy output"
         ''$mod, Print, exec, grimblast --notify copysave output "$XDG_SCREENSHOTS_DIR/$(date +%Y-%m-%dT%H-%M-%S).png"''
-        ''$modSHIFT, S, exec, bash -c \"${./snapshot.sh}\"''
+        ''$modSHIFT, S, exec, grimblast --notify copy area''
       ];
 
       # Mouse bind

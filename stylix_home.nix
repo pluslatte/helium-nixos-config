@@ -1,5 +1,6 @@
 { pkgs, ... }:
 {
+  # home-manager only settings
   stylix = {
     iconTheme = {
       enable = true;
