@@ -17,8 +17,6 @@
   };
 
   home.packages = with pkgs; [
-    alacritty # To show vulnerability list
-
     libgtop
     bluez
     bluez-tools
@@ -121,7 +119,6 @@
       # bar.customModules.updates.icon.pending = "󰏗";
       bar.customModules.updates.icon.updated = "";
       # bar.customModules.updates.icon.updated = "󰏖";
-      bar.customModules.updates.leftClick = "alacritty --hold -e vulnix -S -D";
     };
   };
 }
