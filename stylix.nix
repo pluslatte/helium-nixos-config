@@ -1,5 +1,8 @@
 { pkgs, ... }:
 {
+  # See this
+  # https://stylix.danth.me/index.html
+
   stylix = {
     enable = true;
     image = pkgs.fetchurl {
@@ -8,14 +11,15 @@
       sha256 = "sha256-mFp4f9WOBJcYDZjkU7QWIP793+8VhU6TrekuIDpSgf8=";
     };
     polarity = "dark";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
     opacity.applications = 0.8;
     opacity.desktop = 0.8;
     opacity.popups = 0.8;
     opacity.terminal = 0.8;
     fonts = {
-      sizes.applications = 14;
-      sizes.desktop = 12;
-      sizes.popups = 12;
+      sizes.applications = 12;
+      sizes.desktop = 10;
+      sizes.popups = 10;
       sizes.terminal = 14;
       serif = {
         package = pkgs.dejavu_fonts;
