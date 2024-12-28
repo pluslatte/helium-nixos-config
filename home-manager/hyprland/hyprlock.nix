@@ -1,6 +1,7 @@
 { lib, ... }:
 {
   # https://github.com/turtton/dotnix/blob/main/home-manager/wm/hyprland/hyprlock.nix
+  # Color and Fonts are controlled by stylix.
 
   programs.hyprlock = {
     enable = true;
