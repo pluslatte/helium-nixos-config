@@ -114,6 +114,8 @@
         size = "14px";
       };
 
+      # Vulnerability scan
+      # https://zenn.dev/watagame/articles/hyprland-nix
       bar.customModules.updates.updateCommand = "jq '[.[].cvssv3_basescore | to_entries | add | select(.value > 5)] | length' <<< $(vulnix -S --json)";
       bar.customModules.updates.icon.pending = "";
       # bar.customModules.updates.icon.pending = "󰏗";
