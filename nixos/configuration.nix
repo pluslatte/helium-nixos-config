@@ -90,6 +90,15 @@
   # Enable hyprland
   programs.hyprland.enable = true;
 
+  # Enable display manager
+  services.displayManager.ly = {
+    enable = true;
+    settings = {
+      load = true;
+      save = true;
+    };
+  };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
