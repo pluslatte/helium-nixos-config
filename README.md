@@ -29,3 +29,4 @@ This is my nixos config which is installed on my portable stick USB SSD.
 - When you dual-boot with windows system, **disable windows' fast-startup thing** or wi-fi won't work.
 - If you temporaly need some software for some reason, you can `nix run nixpkgs#<packageName>`.
 - Files which aren't tracked by git will be ignored, because flake is a git repository.
+- `CTRL + ALT + Function` to swtich tty.
