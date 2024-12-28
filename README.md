@@ -11,6 +11,7 @@ This is my nixos config which is installed on my portable stick USB SSD.
 - `git clone` this.
 - (If you are doing an new installation on new device) `nixos-generate-config --dir ./nixos/` at the root of this repository.
 - `sudo nixos-rebuild switch --flake .#helium` at the root of this repository.
+- reboot.
 - *Don't select a thing like `Hyprland (uwsm)` in Ly, which may be selected by default.*
     - Select `Hyprland` instead.
 
