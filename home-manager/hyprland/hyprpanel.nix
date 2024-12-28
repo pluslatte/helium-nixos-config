@@ -1,5 +1,8 @@
 { hyprpanel, pkgs, ... }:
 {
+  # All available options are there in the link below.
+  # https://github.com/Jas-SinghFSU/HyprPanel/blob/master/nix/module.nix
+
   imports = [ hyprpanel.homeManagerModules.hyprpanel ];
 
   home.file = {
@@ -14,6 +17,8 @@
   };
 
   home.packages = with pkgs; [
+    alacritty # To show vulnerability list
+
     libgtop
     bluez
     bluez-tools
@@ -112,7 +117,11 @@
       };
 
       bar.customModules.updates.updateCommand = "jq '[.[].cvssv3_basescore | to_entries | add | select(.value > 5)] | length' <<< $(vulnix -S --json)";
-      # bar.customModules.updates.icon = "󰋼";
+      bar.customModules.updates.icon.pending = "";
+      # bar.customModules.updates.icon.pending = "󰏗";
+      bar.customModules.updates.icon.updated = "";
+      # bar.customModules.updates.icon.updated = "󰏖";
+      bar.customModules.updates.leftClick = "alacritty --hold -e vulnix -S -D";
     };
   };
 }
