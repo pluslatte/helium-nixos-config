@@ -1,5 +1,9 @@
 # helium-nixos-config
 This is my nixos config which is installed on my portable stick USB SSD.
+- Distribution: NixOS
+- Window manager: Hyprland
+- Display manager: Ly
+- Theme is controlled by stylix
 
 ## Usage
 - Ensure you have a NixOS system with login-able user named `latte`.
