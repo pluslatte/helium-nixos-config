@@ -83,6 +83,7 @@
       curl
       wget
       # vim
+      nix-tree
     ];
   };
 

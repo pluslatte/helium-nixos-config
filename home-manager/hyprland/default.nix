@@ -8,8 +8,9 @@
 let
   screenShotsDir = "/home/${username}/screenShots";
   cursorSize = 34;
-  cursorTheme = "Nordzy-catppuccin-latte-dark";
+  cursorTheme = "Nordzy-catppuccin-mocha-dark";
 in
+# cursorTheme = "Breeze_Hacked";
 {
   # Import .nix which are made for hyprland config
   imports = [
@@ -32,6 +33,12 @@ in
     grimblast # Screenshot
 
     nordzy-cursor-theme # Cursor. Avaiable themes: https://github.com/guillaumeboehm/Nordzy-cursors/tree/main/xcursors
+    # (breeze-hacked-cursor-theme.override {
+    #   accentColor = "#fe8019";
+    #   baseColor = "#3c3836";
+    #   borderColor = "#1d2021";
+    #   logoColor = "#ebdbb2";
+    # }) # Cursor.
   ];
   home.file = {
     # An image from gruvbox-wallpapers, for my wallpaper.

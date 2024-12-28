@@ -27,7 +27,7 @@
     spotify
     vscode
     pcmanfm # File manager
-    eog # Image viewer
+    gthumb # Image viewer
     totem # Media player
   ];
 
