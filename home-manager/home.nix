@@ -15,7 +15,7 @@
 
   imports = [
     ./hyprland
-    ../stylix.nix
+    ../stylix_home.nix
   ];
 
   home.packages = with pkgs; [

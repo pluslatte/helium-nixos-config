@@ -27,6 +27,8 @@
     hypridle
     # gpu-screen-recorder
     btop
+
+    nerd-fonts.fira-code
   ];
 
   programs.hyprpanel = {
