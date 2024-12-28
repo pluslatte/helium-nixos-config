@@ -1,5 +1,5 @@
 # helium-nixos-config
-This is my nixos config which is installed on my portable stick USB SSD.
+This is my NixOS config which is installed on my portable stick USB SSD.
 - NixOS
 - Hyprland
 - Ly
