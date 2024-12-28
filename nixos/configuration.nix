@@ -94,6 +94,10 @@
   services.displayManager.ly = {
     enable = true;
     settings = {
+      auth_fails = 3;
+      box_title = "welcome...";
+      clear_password = true;
+      clock = "%F %a %X";
       load = true;
       save = true;
     };

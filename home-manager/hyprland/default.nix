@@ -138,6 +138,11 @@ in
 
         # Touchpad scrolling
         scroll_method = "edge";
+        touchpad.scroll_factor = 0.7;
+
+        # Impatiant key repeat
+        repeat_rate = 25;
+        repeat_delay = 160; # Default is 600
       };
 
       decoration = {
