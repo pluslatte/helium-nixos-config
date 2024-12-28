@@ -103,10 +103,9 @@
       theme.bar.buttons.opacity = 90;
       theme.bar.buttons.enableBorders = true;
       theme.bar.buttons.borderSize = "0.05em";
-
       theme.font = {
         name = "FiraCode Nerd Font";
-        size = "16px";
+        size = "14px";
       };
     };
   };
