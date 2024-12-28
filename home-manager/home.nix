@@ -15,6 +15,7 @@
 
   imports = [
     ./hyprland
+    ../stylix.nix
   ];
 
   home.packages = with pkgs; [
@@ -30,14 +31,7 @@
     totem # Media player
   ];
 
-  # Shut up Discord update, I'm using NixOS.
-  # home.file.".config/discord/settings.json".text = ''
-  #   {
-  #     "SKIP_HOST_UPDATE": true
-  #   }
-  # '';
-
-  # For typing Japanese
+  # Japanese
   i18n.inputMethod = {
     enabled = "fcitx5";
     fcitx5.addons = with pkgs; [
@@ -68,12 +62,6 @@
         window = {
           padding.x = 12;
           padding.y = 12;
-          opacity = 0.8;
-        };
-
-        font = {
-          size = 13;
-          normal.family = "FiraCode Nerd Font";
         };
       };
     };

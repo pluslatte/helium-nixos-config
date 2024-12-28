@@ -18,10 +18,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Hyprpanel
+    # Hyprpanel the status bar
     hyprpanel = {
       url = "github:jas-singhfsu/hyprpanel";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
     };
   };
 
@@ -29,6 +35,7 @@
     {
       nixpkgs,
       home-manager,
+      stylix,
       ...
     }@inputs:
     let
@@ -59,6 +66,8 @@
             };
             modules = [
               ./nixos/configuration.nix
+
+              stylix.nixosModules.stylix
 
               home-manager.nixosModules.home-manager
               {

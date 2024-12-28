@@ -9,7 +9,6 @@ let
   screenShotsDir = "/home/${username}/screenShots";
   cursorSize = 34;
   cursorTheme = "Nordzy-catppuccin-latte-dark";
-  qtTheme = "adwaita-dark";
 in
 {
   # Import .nix which are made for hyprland config
@@ -30,33 +29,35 @@ in
 
     brightnessctl # screen brightness control
     pamixer # pluseaudio mixer
-    swww # Wallpaper
     grimblast # Screenshot
 
     nordzy-cursor-theme # Cursor. Avaiable themes: https://github.com/guillaumeboehm/Nordzy-cursors/tree/main/xcursors
   ];
   home.file = {
     # An image from gruvbox-wallpapers, for my wallpaper.
-    "canyon.jpg" = {
-      target = ".config/hypr/wallpaper/canyon.jpg";
-      source = pkgs.fetchurl {
-        url = "https://gruvbox-wallpapers.pages.dev/wallpapers/irl/canyon.jpg";
-        sha256 = "sha256-om/f73Il7el7OWa1lbOngZW5N1o2zi+kWXTHOyiLXs0=";
-      };
-    };
-    "wallhaven-2e2xyx.jpg" = {
-      target = ".config/hypr/wallpaper/wallhaven-2e2xyx.jpg";
-      source = pkgs.fetchurl {
-        url = "https://gruvbox-wallpapers.pages.dev/wallpapers/anime/wallhaven-2e2xyx.jpg";
-        sha256 = "sha256-mFp4f9WOBJcYDZjkU7QWIP793+8VhU6TrekuIDpSgf8=";
-      };
-    };
+    # "canyon.jpg" = {
+    #   target = ".config/hypr/wallpaper/canyon.jpg";
+    #   source = pkgs.fetchurl {
+    #     url = "https://gruvbox-wallpapers.pages.dev/wallpapers/irl/canyon.jpg";
+    #     sha256 = "sha256-om/f73Il7el7OWa1lbOngZW5N1o2zi+kWXTHOyiLXs0=";
+    #   };
+    # };
+    # "wallhaven-2e2xyx.jpg" = {
+    #   target = ".config/hypr/wallpaper/wallhaven-2e2xyx.jpg";
+    #   source = pkgs.fetchurl {
+    #     url = "https://gruvbox-wallpapers.pages.dev/wallpapers/anime/wallhaven-2e2xyx.jpg";
+    #     sha256 = "sha256-mFp4f9WOBJcYDZjkU7QWIP793+8VhU6TrekuIDpSgf8=";
+    #   };
+    # };
     # To be honest, You need this to make screenshot save working.
     "screenshots_here.txt" = {
       target = "${screenShotsDir}/screenshots_here.txt";
       text = "yippee!";
     };
   };
+
+  # Wallpaper is automaticaly set by stylix
+  services.hyprpaper.enable = true;
 
   # You need me!
   xdg.enable = true;
@@ -80,29 +81,29 @@ in
   gtk.cursorTheme.size = cursorSize;
 
   # Force dark-theme
-  dconf.settings = {
-    "org/gnome/desktop/background" = {
-      picture-uri-dark = "file://${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.src}";
-    };
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-    };
-  };
-  gtk = {
-    enable = true;
-    theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome-themes-extra;
-    };
-  };
-  # systemd.user.sessionVariables = config.home-manager.users."${username}".home.sessionVariables;
-  qt = {
-    enable = true;
-    platformTheme.name = "adwaita";
-    style = {
-      name = "${qtTheme}";
-    };
-  };
+  # dconf.settings = {
+  #   "org/gnome/desktop/background" = {
+  #     picture-uri-dark = "file://${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.src}";
+  #   };
+  #   "org/gnome/desktop/interface" = {
+  #     color-scheme = "prefer-dark";
+  #   };
+  # };
+  # gtk = {
+  #   enable = true;
+  #   theme = {
+  #     name = "Adwaita-dark";
+  #     package = pkgs.gnome-themes-extra;
+  #   };
+  # };
+  # # systemd.user.sessionVariables = config.home-manager.users."${username}".home.sessionVariables;
+  # qt = {
+  #   enable = true;
+  #   platformTheme.name = "adwaita";
+  #   style = {
+  #     name = "${qtTheme}";
+  #   };
+  # };
 
   # hyprland
   wayland.windowManager.hyprland = {
@@ -124,14 +125,14 @@ in
         "XDG_SESSION_TYPE, wayland"
         "XDG_SESSION_DESKTOP, Hyprland"
         "QT_QPA_PLATFORM, Hyprland;wayland"
-        "QT_STYLE_OVERRIDE, ${qtTheme}"
+        # "QT_STYLE_OVERRIDE, ${qtTheme}"
         "XDG_SCREENSHOTS_DIR, ${screenShotsDir}"
         "XCURSOR_SIZE, ${toString cursorSize}"
       ];
 
       exec-once = [
         # Set my lovely wallpaper
-        "swww init && swww img ~/.config/hypr/wallpaper/wallhaven-2e2xyx.jpg"
+        # "swww init && swww img ~/.config/hypr/wallpaper/wallhaven-2e2xyx.jpg"
 
         # Set cursor
         "hyprctl setcursor ${cursorTheme} ${toString cursorSize}"
@@ -145,8 +146,8 @@ in
         gaps_out = 5;
         border_size = 1;
         resize_on_border = true;
-        "col.inactive_border" = "0xff282828";
-        "col.active_border" = "0xffebdbb2";
+        # "col.inactive_border" = "0xff282828";
+        # "col.active_border" = "0xffebdbb2";
       };
 
       input = {
