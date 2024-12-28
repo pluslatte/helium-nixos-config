@@ -97,6 +97,7 @@
       wget
       # vim
       nix-tree
+      ripgrep
     ];
   };
 
