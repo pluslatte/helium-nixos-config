@@ -12,7 +12,7 @@ This is my NixOS config which is installed on my portable stick USB SSD.
 - (If you are doing an new installation on new device) `nixos-generate-config --dir ./nixos/` at the root of this repository.
 - `sudo nixos-rebuild switch --flake .#helium` at the root of this repository.
 - reboot.
-- *Don't select a thing like `Hyprland (uwsm)` in Ly, which may be selected by default.*
+- *Don't select a thing like `Hyprland (uwsm or systemd)` in menu of Ly, which may be selected by default.*
     - Select `Hyprland` instead.
 - 現状、日本語入力は手動で設定する必要があります。
     - fcitx5 と anthy が入っているので、 fcitx5-configtool を起動して設定してください。
