@@ -19,9 +19,8 @@
   ];
 
   home.packages = with pkgs; [
-    bitwarden
     # Discord screensharing works poorly on hyprland, and you have a browser version of Discord.
-    # discord
+    bitwarden
     galculator # Calculator
     obsidian # Markdown IDE
     spotify
