@@ -14,6 +14,9 @@ This is my NixOS config which is installed on my portable stick USB SSD.
 - reboot.
 - *Don't select a thing like `Hyprland (uwsm)` in Ly, which may be selected by default.*
     - Select `Hyprland` instead.
+- 現状、日本語入力は手動で設定する必要があります。
+    - fcitx5 と anthy が入っているので、 fcitx5-configtool を起動して設定してください。
+    - なぜ mozc を採用していないかについては https://github.com/pluslatte/helium-nixos-config/issues/3 を参照してください。
 
 ## Structure
 - `flake.nix` is the entry point of this config.
