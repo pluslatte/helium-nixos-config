@@ -8,7 +8,7 @@
 let
   screenShotsDir = "/home/${username}/screenShots";
   cursorSize = 34;
-  cursorTheme = "Nordzy-catppuccin-mocha-dark";
+  cursorTheme = "Nordzy-cursors";
 in
 {
   # Import .nix which are made for hyprland config

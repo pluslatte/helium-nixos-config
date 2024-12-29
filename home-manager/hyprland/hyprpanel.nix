@@ -33,7 +33,7 @@
     jq # JSON processor used in the "updates" module
     vulnix # vulnerabilities scanner used in the "updates" module
 
-    nerd-fonts.fira-code
+    fira-code-nerdfont
   ];
 
   programs.hyprpanel = {
