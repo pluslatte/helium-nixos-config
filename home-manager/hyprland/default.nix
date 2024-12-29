@@ -9,8 +9,12 @@ let
   screenShotsDir = "/home/${username}/screenShots";
   cursorSize = 34;
   cursorTheme = "Nordzy-cursors";
+  qtTheme = "adwaita-dark";
 in
 {
+  # If qt theme won't work, this may help you.
+  # https://discourse.nixos.org/t/struggling-to-configure-gtk-qt-theme-on-laptop/42268
+
   # Import .nix which are made for hyprland config
   imports = [
     ./wofi.nix # Notification handler
@@ -73,6 +77,15 @@ in
   gtk.cursorTheme.name = "${cursorTheme}";
   gtk.cursorTheme.size = cursorSize;
 
+  # Qt theme
+  qt = {
+    enable = true;
+    platformTheme.name = "adwaita";
+    style = {
+      name = "${qtTheme}";
+    };
+  };
+
   # hyprland
   wayland.windowManager.hyprland = {
     enable = true;
@@ -93,7 +106,7 @@ in
         "XDG_SESSION_TYPE, wayland"
         "XDG_SESSION_DESKTOP, Hyprland"
         "QT_QPA_PLATFORM, Hyprland;wayland"
-        # "QT_STYLE_OVERRIDE, ${qtTheme}"
+        "QT_STYLE_OVERRIDE, ${qtTheme}"
         "XDG_SCREENSHOTS_DIR, ${screenShotsDir}"
         "XCURSOR_SIZE, ${toString cursorSize}"
       ];
