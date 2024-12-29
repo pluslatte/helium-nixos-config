@@ -26,7 +26,7 @@
     obsidian # Markdown IDE
     spotify
     vscode
-    pcmanfm # File manager
+    nemo # File manager
     gthumb # Image viewer
     totem # Media player
   ];
