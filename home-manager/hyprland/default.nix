@@ -7,8 +7,8 @@
 }:
 let
   screenShotsDir = "/home/${username}/screenShots";
-  cursorSize = 34;
-  cursorTheme = "Nordzy-cursors";
+  # cursorSize = 34;
+  # cursorTheme = "Nordzy-cursors";
   qtTheme = "adwaita-dark";
 in
 {
@@ -74,8 +74,8 @@ in
   };
 
   # Cursor theme
-  gtk.cursorTheme.name = "${cursorTheme}";
-  gtk.cursorTheme.size = cursorSize;
+  # gtk.cursorTheme.name = "${cursorTheme}";
+  # gtk.cursorTheme.size = cursorSize;
 
   # Qt theme
   qt = {
@@ -108,7 +108,7 @@ in
         "QT_QPA_PLATFORM, Hyprland;wayland"
         "QT_STYLE_OVERRIDE, ${qtTheme}"
         "XDG_SCREENSHOTS_DIR, ${screenShotsDir}"
-        "XCURSOR_SIZE, ${toString cursorSize}"
+        # "XCURSOR_SIZE, ${toString cursorSize}"
       ];
 
       exec-once = [
@@ -116,7 +116,7 @@ in
         # "swww init && swww img ~/.config/hypr/wallpaper/wallhaven-2e2xyx.jpg"
 
         # Set cursor
-        "hyprctl setcursor ${cursorTheme} ${toString cursorSize}"
+        # "hyprctl setcursor ${cursorTheme} ${toString cursorSize}"
 
         # For screen sharing
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"

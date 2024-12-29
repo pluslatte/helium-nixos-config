@@ -22,6 +22,12 @@
     opacity.popups = 0.8;
     opacity.terminal = 0.8;
 
+    cursor = {
+      package = pkgs.nordzy-cursor-theme;
+      name = "Nordzy-cursors";
+      size = 34;
+    };
+
     fonts = {
       sizes.applications = 12;
       sizes.desktop = 10;
