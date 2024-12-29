@@ -7,8 +7,6 @@
 }:
 let
   screenShotsDir = "/home/${username}/screenShots";
-  # cursorSize = 34;
-  # cursorTheme = "Nordzy-cursors";
   qtTheme = "adwaita-dark";
 in
 {
@@ -34,8 +32,6 @@ in
     brightnessctl # screen brightness control
     pamixer # pluseaudio mixer
     grimblast # Screenshot
-
-    nordzy-cursor-theme # Cursor. Avaiable themes: https://github.com/guillaumeboehm/Nordzy-cursors/tree/main/xcursors
 
     # How to override packages.
     # (breeze-hacked-cursor-theme.override {
@@ -73,10 +69,6 @@ in
     enable = true;
   };
 
-  # Cursor theme
-  # gtk.cursorTheme.name = "${cursorTheme}";
-  # gtk.cursorTheme.size = cursorSize;
-
   # Qt theme
   qt = {
     enable = true;
@@ -108,15 +100,11 @@ in
         "QT_QPA_PLATFORM, Hyprland;wayland"
         "QT_STYLE_OVERRIDE, ${qtTheme}"
         "XDG_SCREENSHOTS_DIR, ${screenShotsDir}"
-        # "XCURSOR_SIZE, ${toString cursorSize}"
       ];
 
       exec-once = [
         # Wallpaper is handled by stylix now.
         # "swww init && swww img ~/.config/hypr/wallpaper/wallhaven-2e2xyx.jpg"
-
-        # Set cursor
-        # "hyprctl setcursor ${cursorTheme} ${toString cursorSize}"
 
         # For screen sharing
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
