@@ -41,26 +41,7 @@
   # Set your time zone.
   time.timeZone = "Asia/Tokyo";
 
-  # Japanese
-  i18n.inputMethod = {
-    type = "fcitx5";
-    enable = true;
-    fcitx5.addons = with pkgs; [
-      fcitx5-mozc
-      # kdePackages.fcitx5-qt
-      # fcitx5-gtk
-      # fcitx5-mellow-themes
-    ];
-    fcitx5.waylandFrontend = true;
-  };
-
-  # Internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-  console = {
-    font = "Lat2-Terminus16";
-    keyMap = "jp106";
-    # useXkbConfig = true;
-  };
+  console.font = "Lat2-Terminus16";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
