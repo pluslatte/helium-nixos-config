@@ -104,6 +104,7 @@
         };
       };
 
+      theme.bar.location = "bottom";
       theme.bar.transparent = true;
       theme.bar.menus.opacity = 100;
       theme.bar.buttons.opacity = 90;
