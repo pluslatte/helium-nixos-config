@@ -19,8 +19,11 @@
     };
 
     # Hyprpanel the status bar
+    # Version pinned.
+    # https://github.com/Jas-SinghFSU/HyprPanel/issues/655
+    # https://github.com/Jas-SinghFSU/HyprPanel/issues/666
     hyprpanel = {
-      url = "github:jas-singhfsu/hyprpanel";
+      url = "github:jas-singhfsu/hyprpanel/ba7e0dfd52172c9c63ee11da689dce49cf76ae1f";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -56,6 +59,9 @@
                 allowUnfree = true;
                 allowUnfreePredicate = _: true;
               };
+              overlays = [
+                inputs.hyprland.overlay
+              ];
             };
           in
           nixpkgs.lib.nixosSystem {
