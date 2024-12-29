@@ -60,7 +60,7 @@
                 allowUnfreePredicate = _: true;
               };
               overlays = [
-                inputs.hyprland.overlay
+                inputs.hyprpanel.overlay
               ];
             };
           in
