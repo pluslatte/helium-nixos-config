@@ -13,7 +13,7 @@ This is my NixOS config which is installed on my portable stick USB SSD.
 - `sudo nixos-rebuild switch --flake .#helium` at the root of this repository.
 - reboot.
 - *Don't select a thing like `Hyprland (uwsm or systemd)` in menu of Ly, which may be selected by default.*
-    - Select `Hyprland` instead.
+    - Select the entry **which is exactly written as `Hyprland`** instead.
 - 現状、日本語入力は手動で設定する必要があります。
     - fcitx5 と anthy が入っているので、 fcitx5-configtool を起動して設定してください。
     - なぜ mozc を採用していないかについては https://github.com/pluslatte/helium-nixos-config/issues/3 を参照してください。
