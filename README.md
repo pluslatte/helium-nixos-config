@@ -6,7 +6,8 @@ This is my NixOS config which is installed on my portable stick USB SSD.
 - Stylix
 
 ## Note
-The following instructions are directed primarily to me, in case I have amnesia.
+- The following instructions are directed primarily to me, in case I have amnesia.
+- The reason most of the content in this repository is written in English is so that I don't have to worry about working in a terminal environment, and because it is simply a pain to type Japanese in vim.
 
 ## Usage
 - Ensure you have a NixOS system with login-able user named `latte`.
