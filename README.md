@@ -3,7 +3,7 @@ This is my NixOS config which is installed on my portable stick USB SSD.
 - NixOS
 - Hyprland
 - Ly
-- Stylix
+- Stylix  
 The following instructions are directed primarily to me, in case I have amnesia.
 
 ## Usage
