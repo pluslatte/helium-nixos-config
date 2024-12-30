@@ -33,17 +33,17 @@ This is my NixOS config which is installed on my portable stick USB SSD.
 - `stylix.nix` controls almost all of the theme-ing things.
 
 ## Tips / Q&A
-- Hyprland won't launch !
+- Q: Hyprland won't launch !
     - *Don't select a thing like `Hyprland (uwsm or systemd)` in the menu of Ly, which may be selected by default.*
     - Select `Hyprland` instead.
-- How do I edit these weird `.nix` files ?
+- Q: How do I edit these weird `.nix` files ?
     - You need to understand what Nix is.
     - If you don't have any working editor environments for Nix Language, you can use my pre-configured neovim.
         - Ensure you have enabled nix experimental features like `nix-command` `flakes`.
         - `nix profile install github:pluslatte/nixvim-config` then `nvim`
         - `space -> e` to open neo-tree
-- Wi-fi not working !
+- Q: Wi-fi not working !
     - When you dual-boot with windows system, disable windows' fast-startup thing or wi-fi won't work.
-- If you temporaly need some software for some reason, you can `nix run nixpkgs#<packageName>`.
-- Files which aren't tracked by git will be ignored, because flake is a git repository.
-- `CTRL + ALT + Function` to swtich tty.
+- Tips: If you temporaly need some software for some reason, you can `nix run nixpkgs#<packageName>`.
+- Tips: Files which aren't tracked by git will be ignored, because flake is a git repository.
+- Tips: `CTRL + ALT + Function` to swtich tty.
