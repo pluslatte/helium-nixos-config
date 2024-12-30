@@ -4,6 +4,7 @@ This is my NixOS config which is installed on my portable stick USB SSD.
 - Hyprland
 - Ly
 - Stylix
+The following instructions are directed primarily to me, in case I have amnesia.
 
 ## Usage
 - Ensure you have a NixOS system with login-able user named `latte`.
