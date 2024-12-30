@@ -9,7 +9,7 @@ This is my NixOS config which is installed on my portable stick USB SSD.
 - Ensure you have a NixOS system with login-able user named `latte`.
 - Ensure you have enabled experimental features of `nix` like `nix-command` `flakes`.
 - `git clone` this.
-- (If you are doing an new installation on new device) `nixos-generate-config --dir ./nixos/` at the root of this repository.
+- `nixos-generate-config --dir ./nixos/` at the root of this repository.
 - `sudo nixos-rebuild switch --flake .#helium` at the root of this repository.
 - reboot.
 - *Don't select a thing like `Hyprland (uwsm or systemd)` in menu of Ly, which may be selected by default.*
