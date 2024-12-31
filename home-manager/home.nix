@@ -60,6 +60,7 @@
 
     # Web browser
     firefox.enable = true;
+    chromium.enable = true;
 
     # Vim
     vim.enable = true;
