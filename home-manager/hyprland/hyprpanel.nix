@@ -121,6 +121,9 @@
         size = "15px";
       };
 
+      # Not to start swww-deamon
+      wallpaper.enable = false;
+
       # Vulnerability scan
       # https://zenn.dev/watagame/articles/hyprland-nix
       bar.customModules.updates.updateCommand = "jq '[.[].cvssv3_basescore | to_entries | add | select(.value > 5)] | length' <<< $(vulnix -S --json)";
