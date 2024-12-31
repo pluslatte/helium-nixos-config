@@ -8,23 +8,23 @@
     enable = true;
 
     image = pkgs.fetchurl {
-      # wallhaven-2e2xyx.jpg
-      url = "https://gruvbox-wallpapers.pages.dev/wallpapers/anime/wallhaven-2e2xyx.jpg";
-      sha256 = "sha256-mFp4f9WOBJcYDZjkU7QWIP793+8VhU6TrekuIDpSgf8=";
+      # wallpaper
+      url = "https://github.com/rose-pine/wallpapers/blob/main/clouds.JPG";
+      sha256 = "sha256-K0CKZsYOkwtKW1mQKy1U2xDM1XFiSmhGcQweuDaB3PQ=";
     };
 
     polarity = "dark";
 
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
 
-    opacity.applications = 0.8;
-    opacity.desktop = 0.8;
-    opacity.popups = 0.8;
-    opacity.terminal = 0.8;
+    opacity.applications = 0.82;
+    opacity.desktop = 0.82;
+    opacity.popups = 0.82;
+    opacity.terminal = 0.82;
 
     cursor = {
-      package = pkgs.nordzy-cursor-theme;
-      name = "Nordzy-cursors";
+      package = pkgs.rose-pine-cursor;
+      name = "BreezeX-RosePine-Linux";
       size = 34;
     };
 

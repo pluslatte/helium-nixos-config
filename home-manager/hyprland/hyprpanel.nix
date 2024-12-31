@@ -41,7 +41,7 @@
     systemd.enable = true;
     hyprland.enable = true;
     overwrite.enable = true;
-    theme = "gruvbox";
+    theme = "rose_pine";
 
     layout = {
       "bar.layouts" = {
@@ -60,11 +60,11 @@
           ];
           right = [
             # "bluetooth"
+            "hypridle"
+            "hyprsunset"
             "network"
             "volume"
             "clock"
-            "hyprsunset"
-            "hypridle"
             "notifications"
           ];
         };
@@ -104,15 +104,21 @@
         };
       };
 
-      theme.bar.location = "bottom";
-      theme.bar.transparent = true;
-      theme.bar.menus.opacity = 100;
-      theme.bar.buttons.opacity = 90;
-      theme.bar.buttons.enableBorders = true;
-      theme.bar.buttons.borderSize = "0.05em";
+      theme.bar = {
+        location = "bottom";
+        transparent = true;
+        menus.opacity = 100;
+        buttons = {
+          opacity = 90;
+          enableBorders = false;
+          borderSize = "0.05em";
+          # systray.enableBorder = true;
+          # workspaces.enableBorder = true;
+        };
+      };
       theme.font = {
         name = "FiraCode Nerd Font";
-        size = "14px";
+        size = "15px";
       };
 
       # Vulnerability scan
