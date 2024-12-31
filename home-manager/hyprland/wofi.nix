@@ -1,4 +1,22 @@
 { pkgs, ... }:
+let
+  base00 = "#191724";
+  base01 = "#1f1d2e";
+  base02 = "#26233a";
+  base03 = "#6e6a86";
+  base04 = "#908caa";
+  base05 = "#e0def4";
+  base06 = "#e0def4";
+  base07 = "#524f67";
+  base08 = "#eb6f92";
+  base09 = "#f6c177";
+  base0A = "#ebbcba";
+  base0B = "#31748f";
+  base0C = "#9ccfd8";
+  base0D = "#c4a7e7";
+  base0E = "#f6c177";
+  base0F = "#524f67";
+in
 {
   # Dependencies
   home.packages = with pkgs; [
@@ -13,7 +31,7 @@
       font-weight: bold;
       margin: 0px;
       border-radius: 10px;
-      background-color: rgba(40, 40, 40, 0.9);
+      background-color: ${base02};
     }
 
     #input {
@@ -22,8 +40,8 @@
       border-radius: 6px;
       margin: 5px;
       border: none;
-      color: #c8d3f5;
-      background-color: rgba(80, 73, 69, 0.2);
+      color: ${base05};
+      background-color: ${base07};
     }
 
     #inner-box {
@@ -46,7 +64,7 @@
     #text {
       margin: 5px;
       border: none;
-      color: #ebdbb2;
+      color: ${base05};
     }
 
     #entry {
@@ -58,7 +76,7 @@
     }
 
     #entry:selected {
-      background-color: rgba(214, 94, 14, 0.2);
+      background-color: ${base08};
       border-radius: 5px;
       border: none;
     }
