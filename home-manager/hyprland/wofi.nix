@@ -16,6 +16,10 @@ let
   base0D = "#c4a7e7";
   base0E = "#f6c177";
   base0F = "#524f67";
+  base02a = "rgba(38, 35, 58, 0.9)";
+  base05a = "rgba(224, 222, 244, 1.0)";
+  base07a = "rgba(82, 79, 103, 0.2)";
+  base08a = "rgba(235, 111, 146, 0.2)";
 in
 {
   # Dependencies
@@ -31,7 +35,7 @@ in
       font-weight: bold;
       margin: 0px;
       border-radius: 10px;
-      background-color: ${base02};
+      background-color: ${base02a};
     }
 
     #input {
@@ -40,8 +44,8 @@ in
       border-radius: 6px;
       margin: 5px;
       border: none;
-      color: ${base05};
-      background-color: ${base07};
+      color: ${base05a};
+      background-color: ${base07a};
     }
 
     #inner-box {
@@ -64,7 +68,7 @@ in
     #text {
       margin: 5px;
       border: none;
-      color: ${base05};
+      color: ${base05a};
     }
 
     #entry {
@@ -76,7 +80,7 @@ in
     }
 
     #entry:selected {
-      background-color: ${base08};
+      background-color: ${base08a};
       border-radius: 5px;
       border: none;
     }
