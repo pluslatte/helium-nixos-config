@@ -25,7 +25,10 @@
     obsidian # Markdown IDE
     spotify
     vscode
-    nemo # File manager
+    yt-dlp
+    cava # Audio visualizer on console
+    tty-clock
+    pcmanfm # File manager
     gthumb # Image viewer
     totem # Media player
   ];

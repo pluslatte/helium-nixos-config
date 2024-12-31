@@ -66,13 +66,6 @@
   users.users.latte = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-      tree
-      curl
-      wget
-      nix-tree
-      ripgrep
-    ];
   };
 
   # Enable hyprland
@@ -99,6 +92,9 @@
     wget
     bottom
     neofetch
+    tree
+    nix-tree
+    ripgrep
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
