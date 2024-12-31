@@ -49,9 +49,6 @@ in
     };
   };
 
-  # Wallpaper is automaticaly set by stylix
-  services.hyprpaper.enable = true;
-
   # You need me!
   xdg.enable = true;
   xdg.portal = {
@@ -132,7 +129,7 @@ in
 
         # Impatiant key repeat
         repeat_rate = 25;
-        repeat_delay = 160; # Default is 600
+        repeat_delay = 175; # Default is 600
       };
 
       decoration = {

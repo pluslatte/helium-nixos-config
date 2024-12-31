@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   # See this
   # https://stylix.danth.me/index.html
@@ -9,8 +9,9 @@
 
     image = pkgs.fetchurl {
       # wallpaper
-      url = "https://github.com/rose-pine/wallpapers/blob/main/clouds.JPG";
-      sha256 = "sha256-K0CKZsYOkwtKW1mQKy1U2xDM1XFiSmhGcQweuDaB3PQ=";
+      # https://github.com/rose-pine/neovim/issues/2
+      url = "https://user-images.githubusercontent.com/1474821/128650757-51e5206b-b4e3-42f9-8f7a-5a1486347c8d.JPG";
+      sha256 = "sha256-ewy9UVAoiChNQa91NsdRvlvltQiZT0g2nlMrdHx0Dmc=";
     };
 
     polarity = "dark";
