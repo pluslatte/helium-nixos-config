@@ -15,6 +15,7 @@
 
   imports = [
     ./hyprland
+    ./cava.nix # Audio visulalizer
     ../stylix_home.nix
   ];
 
@@ -26,7 +27,6 @@
     spotify
     vscode
     yt-dlp
-    cava # Audio visualizer on console
     tty-clock
     pcmanfm # File manager
     gthumb # Image viewer
