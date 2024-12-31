@@ -33,6 +33,8 @@ in
     pamixer # pluseaudio mixer
     grimblast # Screenshot
 
+    hyprpaper # Wallpaper thing
+
     # How to override packages.
     # (breeze-hacked-cursor-theme.override {
     #   accentColor = "#fe8019";
@@ -100,8 +102,8 @@ in
       ];
 
       exec-once = [
-        # Wallpaper is handled by stylix now.
-        # "swww init && swww img ~/.config/hypr/wallpaper/wallhaven-2e2xyx.jpg"
+        # Wallpaper
+        "hyprpaper"
 
         # For screen sharing
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
