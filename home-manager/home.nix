@@ -3,6 +3,7 @@
   system,
   username,
   host,
+  nixvim,
   ...
 }:
 {
@@ -19,24 +20,29 @@
     ../stylix_home.nix
   ];
 
-  home.packages = with pkgs; [
-    # Discord screensharing works poorly on hyprland, and you have a browser version of Discord.
-    bitwarden
-    galculator # Calculator
-    obsidian # Markdown IDE
-    spotify
-    vscode
-    yt-dlp
-    tty-clock
-    (chromium.override {
-      commandLineArgs = [
-        "--enable-wayland-ime"
-      ];
-    }) # Web Browser
-    pcmanfm # File manager
-    gthumb # Image viewer
-    totem # Media player
-  ];
+  home.packages =
+    with pkgs;
+    [
+      # Discord screensharing works poorly on hyprland, and you have a browser version of Discord.
+      bitwarden
+      galculator # Calculator
+      obsidian # Markdown IDE
+      spotify
+      vscode
+      yt-dlp
+      tty-clock
+      (chromium.override {
+        commandLineArgs = [
+          "--enable-wayland-ime"
+        ];
+      }) # Web Browser
+      pcmanfm # File manager
+      gthumb # Image viewer
+      totem # Media player
+    ]
+    ++ [
+      nixvim.packages.${system}.default
+    ];
 
   home.file = {
     ".xprofile".text = ''

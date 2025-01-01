@@ -30,6 +30,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+
+    # My preconfigured neovim
+    nixvim = {
+      url = "github:pluslatte/nixvim-config";
+    };
   };
 
   outputs =
@@ -82,6 +87,7 @@
                   inherit username;
                   hyprpanel = inputs.hyprpanel;
                   hyprland-qtutils = inputs.hyprland-qtutils;
+                  nixvim = inputs.nixvim;
                 };
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
