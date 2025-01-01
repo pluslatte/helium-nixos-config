@@ -28,6 +28,11 @@
     vscode
     yt-dlp
     tty-clock
+    (chromium.override {
+      commandLineArgs = [
+        "--enable-wayland-ime"
+      ];
+    }) # Web Browser
     pcmanfm # File manager
     gthumb # Image viewer
     totem # Media player
@@ -60,7 +65,6 @@
 
     # Web browser
     firefox.enable = true;
-    chromium.enable = true;
 
     # Vim
     vim.enable = true;
