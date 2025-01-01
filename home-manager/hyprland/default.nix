@@ -96,7 +96,7 @@ in
         "XDG_CURRENT_DESKTOP, Hyprland"
         "XDG_SESSION_TYPE, wayland"
         "XDG_SESSION_DESKTOP, Hyprland"
-        "QT_QPA_PLATFORM, Hyprland;wayland"
+        "QT_QPA_PLATFORM, Hyprland;wayland;xcb"
         "QT_STYLE_OVERRIDE, ${qtTheme}"
         "XDG_SCREENSHOTS_DIR, ${screenShotsDir}"
       ];
