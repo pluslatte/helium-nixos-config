@@ -15,6 +15,7 @@
     # https://www.reddit.com/r/NixOS/comments/1hkr6ir/flake_update_introduced_the_recommended/
     hyprland-qtutils = {
       url = "github:hyprwm/hyprland-qtutils";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Hyprpanel the status bar
