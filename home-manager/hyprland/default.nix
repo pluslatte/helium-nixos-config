@@ -34,6 +34,7 @@ in
     grimblast # Screenshot
 
     hyprpaper # Wallpaper thing
+    hyprpolkitagent # Polkit agent
 
     # How to override packages.
     # (breeze-hacked-cursor-theme.override {
@@ -110,6 +111,9 @@ in
 
         # Japanese
         "fcitx5 &"
+
+        # Polkit agent
+        "systemctl --user start hyprpolkitagent"
       ];
 
       general = {
