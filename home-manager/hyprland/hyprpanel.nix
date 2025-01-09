@@ -73,7 +73,10 @@
 
     settings = {
       bar.launcher.autoDetectIcon = true;
-      bar.workspaces.show_icons = true;
+      bar.workspaces = {
+        workspaces = 5;
+        show_icons = true;
+      };
       bar.clock.format = "%y/%m/%d %H:%M";
 
       menus.clock = {
