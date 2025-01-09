@@ -33,7 +33,7 @@
       sizes.applications = 12;
       sizes.desktop = 10;
       sizes.popups = 10;
-      sizes.terminal = 14;
+      sizes.terminal = 12;
       serif = {
         # package = pkgs.dejavu_fonts;
         # name = "DejaVu Serif";
