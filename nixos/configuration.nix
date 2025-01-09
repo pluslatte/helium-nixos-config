@@ -71,6 +71,9 @@
   # Enable hyprland
   programs.hyprland.enable = true;
 
+  # Enable nix-ld (for node)
+  programs.nix-ld.enable = true;
+
   # Enable display manager
   services.displayManager.ly = {
     enable = true;
