@@ -118,7 +118,7 @@
       };
       theme.font = {
         name = "FiraCode Nerd Font";
-        size = "15px";
+        size = "12px";
       };
 
       # Not to start swww-deamon
