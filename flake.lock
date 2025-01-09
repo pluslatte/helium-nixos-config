@@ -574,11 +574,11 @@
         "nixvim": "nixvim_2"
       },
       "locked": {
-        "lastModified": 1736392746,
-        "narHash": "sha256-OsRz7/qWntZrOX+ae1Eqv6PJskm4l08dmEzTb9Nz0KM=",
+        "lastModified": 1736397224,
+        "narHash": "sha256-7YxYDoMtTcdKUeSo53uMA7iAZLNBRX5ZwwtZvzOiOrQ=",
         "owner": "pluslatte",
         "repo": "nixvim-config",
-        "rev": "50fedb06952fc46a5c97cf0cf4b833e059fd2d72",
+        "rev": "db0222d3da3065f69f1655d7b7a5f4f02ed01e42",
         "type": "github"
       },
       "original": {
