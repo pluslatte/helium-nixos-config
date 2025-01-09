@@ -26,7 +26,11 @@
       # Discord screensharing works poorly on hyprland, and you have a browser version of Discord.
       bitwarden
       galculator # Calculator
-      obsidian # Markdown IDE
+      (obsidian.override {
+        commandLineArgs = [
+          "--enable-wayland-ime"
+        ];
+      }) # Markdown IDE
       spotify
       vscode
       yt-dlp
